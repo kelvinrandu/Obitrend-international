@@ -24,5 +24,21 @@ Route::group(['middleware' => 'auth:api'], function()
   'uses' => 'API\PassportController@getDetails',
   'as' => 'client.api.index'
   ]);
+  Route::post('get/each/{id}', [
+  'uses' => 'API\PassportController@eachAnnouncement',
+  'as' => 'client.each.announcement'
+  ]);
+  Route::post('create/announcement', [
+  'uses' => 'API\PassportController@createAnnouncement',
+  'as' => 'create.announcement'
+  ]);
+  Route::post('create/comment', [
+  'uses' => 'API\PassportController@createComment',
+  'as' => 'client.comments'
+  ]);
+  Route::post('create/tribute', [
+  'uses' => 'API\PassportController@createTributes',
+  'as' => 'client.tributes'
+  ]);
 
 });

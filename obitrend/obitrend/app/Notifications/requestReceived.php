@@ -41,8 +41,8 @@ class requestReceived extends Notification
      public function toMail($notifiable)
      {
          return (new MailMessage)
-                     ->line('Your request has been received and being processed.We will update  you whe your request goes online on the site')
-                     ->action('View request', url('http://localhost:8000/login'))
+                     ->line('Your request has been received and being processed.We will update  you when your request goes online on the site')
+                     // ->action('View request', url('http://localhost:8000/login'))
                      ->line('Thank you for using our application!');
 
 

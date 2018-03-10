@@ -48,7 +48,7 @@
                                     <i class="icon-user"></i>My country</a>
                             </li>
                             <li>
-                                <a href="{{ route('client.index') }}">
+                                <a href="{{ url('/view/announcements')}}">
                                     <i class="icon-users"></i>All </a>
                             </li>
                             <li class="divider"> </li>
@@ -208,7 +208,7 @@
 
                                 </div>
                             </div>
-                  
+
                         </div>
                     </div>
                 </div>

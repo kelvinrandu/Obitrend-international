@@ -19,7 +19,8 @@ use InterImage;
 use Intervention\Image\ImageManagerStatic as Image;
 use Session;
 use App\User;
- use PDF;
+use App;
+use PDF;
 
 
 
@@ -59,23 +60,21 @@ class AnnouncementController extends Controller
         $user_id = Auth::user()->id;
 
     //checks for file upload(id picture)
-//     $this->validate($request,[
-//   'description' => 'max:255',
-//    'image_path' => 'required|image',
-// ]);
+    $this->validate($request,[
+  'description' => 'max:255',
+   'image_path' => 'required|image',
+]);
       if ($request->hasFile('image_path')&&$request->hasFile('image_thumb')&&$request->hasFile('file'))
       {
-         // $filename = $request->file->getClientOriginalName();
-         // $imagename = $request->image_path->getClientOriginalName();
-         // $thumbname = $request->image_thumb->getClientOriginalName();
+
            $path = $request->image_path->store('public/id');
            $file = $request->image_thumb->store('public/upload');
            $download = $request->file->store('public/downloads');
+
+
       //creates announcements
-      //
-      // $path = Storage::disk('public')->putfile('public/id',$request->image_path);
-      // $file = Storage::disk('public')->putfile('public/upload',$request->image_thumb);
-      // $download  = Storage::disk('public')->putfile('public/downloads',$request->file);
+
+
            Announcement::create(array(
                'content'=>Input::get('content'),
                'user_id'=>Auth::user()->id,
@@ -98,19 +97,15 @@ class AnnouncementController extends Controller
                $user = User::find($user_id);
                $user->notify(new requestReceived() );
          return redirect()->route('client.index')->with('message','request received successfully');
-      }elseif ($request->hasFile('image_path')&&$request->hasFile('image_thumb')) {
 
-           // $filename = $request->file->getClientOriginalName();
-           // $imagename = $request->image_path->getClientOriginalName();
-           // $thumbname = $request->image_thumb->getClientOriginalName();
+      }elseif($request->hasFile('image_path')&&$request->hasFile('image_thumb')) {
+
+
              $path = $request->image_path->store('public/id');
-              $file = $request->image_thumb->store('public/upload');
-            // $download = $request->file->store('public/downloads');
+             $file = $request->image_thumb->store('public/upload');
+
         //creates announcements
-        //
-        // $path = Storage::disk('public')->putfile('public/id',$request->image_path);
-        // $file = Storage::disk('public')->putfile('public/upload',$request->image_thumb);
-        // $download  = Storage::disk('public')->putfile('public/downloads',$request->file);
+
              Announcement::create(array(
                  'content'=>Input::get('content'),
                  'user_id'=>Auth::user()->id,
@@ -240,12 +235,15 @@ class AnnouncementController extends Controller
       }
 
       /* test download*/
-          public function download($id, Request $request){
-           //
-           // $download_path = 'public/downloads/info.pdf';
-           //  $path = Storage::get($download_path);
-           //  $pdf = App::make($path);
-           return 1;
+      public function download(){
+
+          $download_path = 'public/downloads/info.pdf';
+             $path = Storage::get($download_path);
+            $pdf = App::make($path);
+           // $pdf = App::make('dompdf.wrapper');
+           $pdf->loadHTML('<h1>Test</h1>');
+           return $pdf->stream('info.pdf')
+         ->header('Content-Type','application/pdf');
 
 
         }

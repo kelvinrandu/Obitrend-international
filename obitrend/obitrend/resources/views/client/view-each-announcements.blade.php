@@ -65,7 +65,8 @@
                               <li class="divider"> </li>
 
                               <li>
-                                  <a href="{{ route('announcement.download', $request[0]->file_path) }}"
+                                    <!-- <a href="{{ route('announcement.download', $request[0]->file_path) }}" -->
+                                  <a href="{{ route('announcement.download') }}"
                                      >Download euology </a>
                               </li>
                                @endif
@@ -183,7 +184,7 @@
                             <div class="form-group form-md-line-input form-md-floating-label has-success">
 
 <input type="text" class="form-control" name="comment" id="form_control_1">
-<label for="form_control_1">Tribute goes here</label>
+<label for="form_control_1">  Tribute goes here</label>
 </div>
 
  <input type="hidden" name="announcement_id" value="{{$request[0]->id}}">
