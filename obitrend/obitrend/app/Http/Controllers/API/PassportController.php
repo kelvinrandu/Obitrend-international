@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use InterImage;
+use PDF;
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -270,5 +273,79 @@ class PassportController extends Controller
           return response()->json(['error'=>$error ], 401);
 
     }
+
+    /* Fetch the artwork using the id */
+          public function upload($id, Request $request){
+
+          $image_path = 'public/upload/'.$id;
+
+          $image = Storage::get($image_path);
+
+          /* Return the file */
+           return Image::make($image)->resize(240, 200)->response();
+
+      }
+
+      /* Fetch the artwork using the id */
+            public function id($id, Request $request){
+
+            $image_path = 'public/id/'.$id;
+            //$image_path = 'public/defaults/avatars/'.$id;
+
+            $image = Storage::get($image_path);
+
+            /* Return the file */
+             return Image::make($image)->response();
+
+        }
+
+        /* Fetch the image using the id */
+              public function avatar($id, Request $request){
+
+
+            $image_path = 'public/defaults/avatars/'.$id;
+
+              $image = Storage::get($image_path);
+
+              /* Return the file */
+               return Image::make($image)->resize(240, 180)->response();
+
+          }
+
+          /* test download*/
+          public function download(){
+
+              $download_path = 'public/downloads/info.pdf';
+                 $path = Storage::get($download_path);
+                $pdf = App::make($path);
+               // $pdf = App::make('dompdf.wrapper');
+               $pdf->loadHTML('<h1>Test</h1>');
+               return $pdf->stream('info.pdf')
+             ->header('Content-Type','application/pdf');
+
+
+
+            }
+  //change avatar
+  public function update(Request $request)  {
+    $success = "success";
+    $error = "error";
+    $message = "avatar updated succesfully";
+
+            if($request->hasFile('avatar'))
+                {
+                  Auth::user()->update([
+                  'avatar' => $request->avatar->store('public/defaults/avatars'),
+                  ]);
+
+
+                  return response()->json(['success'=>$success,'message'=>$message], $this->successStatus);
+
+                    }else{
+
+                  return response()->json(['error'=>$error ], 401);
+
+                    }
+        }
 
 }
