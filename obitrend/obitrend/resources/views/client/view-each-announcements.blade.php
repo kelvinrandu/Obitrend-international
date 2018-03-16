@@ -66,7 +66,7 @@
 
                               <li>
                                     <!-- <a href="{{ route('announcement.download', $request[0]->file_path) }}" -->
-                                  <a href="{{ route('announcement.download') }}"
+                                  <a href="{{ route('announcement.download',$request[0]->file_path) }}"
                                      >Download euology </a>
                               </li>
                                @endif

@@ -132,17 +132,17 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AnnouncementController@create_comments',
     'as' => 'create.comments'
     ]);
-    Route::get('/storage/downloads/', [
-    'uses' => 'AnnouncementController@download',
-    'as' => 'announcement.download'
-    ]);
+    // Route::get('downloads/{id}', [
+    // 'uses' => 'AnnouncementController@download',
+    // 'as' => 'announcement.download'
+    // ]);
 
 
     //routes to extract images from storage
     Route::get('storage/upload/{id}','AnnouncementController@upload');
     Route::get('storage/id/{id}','AnnouncementController@id');
     Route::get('storage/defaults/avatars/{id}','AnnouncementController@avatar');
-    // Route::get('downloads/{id}','AnnouncementController@download')->name('announcement.download');
+    Route::get('downloads/{request[0]->file_path}','AnnouncementController@download')->name('announcement.download');
 
 
 });

@@ -78,7 +78,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
                     <label class="control-label visible-ie8 visible-ie9">Username</label>
-                    <input class="form-control form-control-solid placeholder-no-fix" type="email" autocomplete="off" value="{{ old('email') }}"  name="email" /> </div>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" value="{{ old('email') }}"  name="email" /> </div>
                 <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">Password</label>
                     <input class="form-control form-control-solid placeholder-no-fix" type="password"  placeholder="Password" name="password" /> </div>
@@ -88,15 +88,15 @@ License: You must have a valid license purchased only from themeforest(the above
                         <input type="checkbox" name="remember" value="1" />Remember
                         <span></span>
                     </label>
-                    <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+                    <a href="{{ url('/password/reset') }}" class="forget-password">Forgot Password?</a>
                 </div>
                 <div class="login-options">
-                     <h4>Or login with</h4>
+                     <!-- <h4>Or login with</h4>
                     <ul class="social-icons">
                         <li>
                             <a class="social-icon-color facebook" data-original-title="facebook" href="{{ url('auth/facebook') }}"></a>
                         </li>
-                        <!-- <li>
+                         <li>
                             <a class="social-icon-color twitter" data-original-title="Twitter" href="javascript:;"></a>
                         </li>
                         <li>
@@ -104,8 +104,8 @@ License: You must have a valid license purchased only from themeforest(the above
                         </li>
                         <li>
                             <a class="social-icon-color linkedin" data-original-title="Linkedin" href="javascript:;"></a>
-                        </li> -->
-                    </ul>
+                        </li>
+                    </ul> -->
                 </div>
                 <div class="create-account">
                     <p>
