@@ -36,7 +36,7 @@ Route::get('/home', 'HomeController@home')->name('home');
 Route::group(['middleware' => 'auth'], function()
 {
     Route::get('/profile/{slug}',[
-    'uses' => 'ProfilesController@index',
+    'uses' => 'ProfileController@index',
     'as' => 'profile',
      ]);
 //fetches the edit page
@@ -142,7 +142,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('storage/upload/{id}','AnnouncementController@upload');
     Route::get('storage/id/{id}','AnnouncementController@id');
     Route::get('storage/defaults/avatars/{id}','AnnouncementController@avatar');
-    Route::get('downloads/{request[0]->file_path}','AnnouncementController@download')->name('announcement.download');
+    Route::get('downloads/','AnnouncementController@download')->name('announcement.download');
 
 
 });

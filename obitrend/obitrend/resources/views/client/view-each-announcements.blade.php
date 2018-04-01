@@ -2,20 +2,7 @@
 
 
 @section('content')
-<div class="page-container">
-    <!-- BEGIN SIDEBAR -->
-    <div class="page-sidebar-wrapper">
 
-        <div class="page-sidebar navbar-collapse collapse">
-
-            <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-
-            </ul>
-            <!-- END SIDEBAR MENU -->
-        </div>
-        <!-- END SIDEBAR -->
-    </div>
-    <!-- END SIDEBAR -->
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <!-- BEGIN CONTENT BODY -->
@@ -65,8 +52,9 @@
                               <li class="divider"> </li>
 
                               <li>
-                                    <!-- <a href="{{ route('announcement.download', $request[0]->file_path) }}" -->
-                                  <a href="{{ route('announcement.download',$request[0]->file_path) }}"
+                              <a href="{{ route('announcement.download') }}" download="public/downloads/info.pdf"
+
+
                                      >Download euology </a>
                               </li>
                                @endif

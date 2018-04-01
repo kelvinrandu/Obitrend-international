@@ -260,6 +260,57 @@
         <!-- <div class="page-container">
 
           </div> -->
+          <div class="page-container">
+              <!-- BEGIN SIDEBAR -->
+              <div class="page-sidebar-wrapper">
+                  <!-- END SIDEBAR -->
+                  <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                  <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                  <div class="page-sidebar navbar-collapse collapse">
+                      <!-- BEGIN SIDEBAR MENU -->
+                      <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-hover-submenu page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                        <li class="nav-item start ">
+                            <a href="{{ route('home') }}" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Home</span>
+                                <span class="arrow"></span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{ url('/announcements/make')}}" class="nav-link nav-toggle">
+                                <i class="fa fa-pencil"></i>
+                                <span class="title">Make request</span>
+                                <span class="arrow"></span>
+                            </a>
+
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{ url('/view/announcements')}}" class="nav-link nav-toggle">
+                                <i class="fa fa-eye"></i>
+                                <span class="title">View announcementss</span>
+                                <span class="arrow"></span>
+                            </a>
+
+                        </li>
+
+                      @if(Auth::check())
+                          @if(Auth::user()->access_level == 1)
+                          <li class="nav-item  ">
+                              <a href="{{route('admin.index')}}" class="nav-link nav-toggle">
+                                  <i class="fa fa-gavel"></i>
+                                  <span class="title">Admin dashboard</span>
+                                  <span class="arrow"></span>
+                              </a>
+
+                          </li>
+                          @endif
+                      @endif
+                      </ul>
+                      <!-- END SIDEBAR MENU -->
+                  </div>
+                  <!-- END SIDEBAR -->
+              </div>
             @yield('content')
         </div>
 

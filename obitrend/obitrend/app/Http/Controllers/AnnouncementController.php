@@ -235,16 +235,18 @@ class AnnouncementController extends Controller
       }
 
       /* test download*/
-      public function download($id){
+      public function download(){
+            // $filename = 'info.pdf';
+         //
+        //   $download_path = 'public/downloads/info.pdf';
+        //   $path = Storage::get($download_path);
+           $path = storage_path('app/downloads/info.pdf');
+         //  $pdf = App::make($path)->response();
+         //
+         //    // $pdf->loadHTML('<h1>Test</h1>');
+          return $pdf->download($download_path);
+         //  // ->header('Content-Type','application/pdf');
 
-         //  $download_path = 'public/downloads/info.pdf';
-         //  $path = Storage::get($download_path);
-         //  $pdf = App::make($path);
-            $pdf = PDF::loadHTML('<h1>Test</h1>');
-            // $pdf->loadHTML('<h1>Test</h1>');
-          // return $pdf->download('info.pdf');
-         // ->header('Content-Type','application/pdf');
-          return $id;
 
 
         }

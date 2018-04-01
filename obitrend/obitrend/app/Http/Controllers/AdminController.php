@@ -33,7 +33,12 @@ class AdminController extends Controller
      */
     public function index()
     {
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
       //fetches all users
+
         $users = User::all();
         $requests = Announcement::all();
 
@@ -46,6 +51,10 @@ class AdminController extends Controller
     }
     public function get_all_requests()
     {
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
       //fetches all user requests
         $users = count(User::all());
         $announcements = count(Announcement::all());
@@ -64,6 +73,10 @@ class AdminController extends Controller
     //function that gets each request
     public function get_request($id)
     {
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
 
         $request =  Announcement::with('user')->where('id',$id)->get();
         // $request = DB::table('announcements')->with('user')->where('id',$id)
@@ -79,6 +92,11 @@ class AdminController extends Controller
 
     public function block($id)
     {
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
+
       //blocks user
 
        $user = User::find($id);
@@ -98,6 +116,10 @@ class AdminController extends Controller
 
     public function decline_request($id)
     {
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
       // make request as read
     $announcement = Announcement::find($id);
       if($announcement){
@@ -115,6 +137,10 @@ class AdminController extends Controller
 
     public function approve_request($id)
     {
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
       //approves user requests
       $announcement = Announcement::find($id);
       if($announcement){
