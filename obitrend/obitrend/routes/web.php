@@ -65,6 +65,11 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AdminController@get_all_requests',
     'as' => 'admin.view.requests'
     ]);
+    /*updates the announcement details of user*/
+      Route::post('announcement/update/announcement',[
+      'uses' => 'AdminController@updateRequest',
+      'as' => 'update.request'
+      ]);
   // fetches the make request view
     Route::get('/index', [
     'uses' => 'HomeController@home',

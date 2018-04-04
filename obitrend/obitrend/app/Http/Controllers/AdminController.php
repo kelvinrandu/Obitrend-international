@@ -126,6 +126,10 @@ class AdminController extends Controller
         $announcement->status =1;
         $announcement->is_featured = 0;
         $announcement->save();
+        //notify user //activate after creating notification
+        // $me = DB::table('announcements')->where('id',$id)
+        // $user = User::find($me);
+        // $user->notify(new requestLive());
 
         return Redirect::to('/admin')->with('message','request declined successfully');
 
@@ -154,7 +158,7 @@ class AdminController extends Controller
         ->value('user_id');
         //notify the user by mail
         $user = User::find($me);
-        $user->notify(new requestLive() );
+        $user->notify(new requestLive());
 
         return Redirect::to('/admin')->with('message','request approved successfully');
       }
@@ -162,4 +166,41 @@ class AdminController extends Controller
         return Redirect::to('/admin')->with('message','request approved was unsuccessfull');
 
     }
+    //edit announcement function
+    public function updateRequest( Request $request)
+    {
+      // if(Auth::user()->access_level != 1){
+      //
+      //   return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      // }
+      //     /* edit function comes here */
+        $response1 =  $request->all();
+        $id=$response1['id'];
+        $title=$response1['title'];
+        $description=$response1['description'];
+      $input1=$request->except('_token','id');
+
+    //if no edit data is passed
+      if( $title == NULL && $description == NULL ){
+
+
+       return redirect()->back()->with('message','announcement not edited...please try again');
+
+      }
+       /* edit function comes here */
+            $input=array_filter($input1);
+            $announcement = Announcement::find($id);
+            if($announcement){
+
+                    foreach ($input as $key => $value) {
+                    $announcement->update([
+                        $key => $value,
+                       ]);
+                       }
+                /* edit function ends here */
+           return redirect()->back()->with('message','announcement edited successfully');
+
+
+    }
+}
 }
