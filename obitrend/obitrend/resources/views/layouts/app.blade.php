@@ -306,6 +306,19 @@
                           </li>
                           @endif
                       @endif
+
+                  @if(Auth::check())
+                      @if(Auth::user()->access_level == 2)
+                      <li class="nav-item  ">
+                          <a href="{{route('super.admin.index')}}" class="nav-link nav-toggle">
+                              <i class="fa fa-gavel"></i>
+                              <span class="title">Admin dashboard</span>
+                              <span class="arrow"></span>
+                          </a>
+
+                      </li>
+                      @endif
+                  @endif
                       </ul>
                       <!-- END SIDEBAR MENU -->
                   </div>

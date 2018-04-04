@@ -122,6 +122,24 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AdminController@decline_request',
     'as' => 'admin.decline.request'
     ]);
+    Route::get('/administrator', [
+    'uses' => 'SuperAdminController@index',
+    'as' => 'super.admin.index'
+    ]);
+    Route::get('super/admin/view', [
+    'uses' => 'SuperAdminController@get_all_requests',
+    'as' => 'super.admin.view'
+    ]);
+    //demote  admin
+    Route::get('/admin/demote/{id}', [
+    'uses' => 'SuperAdminController@demote',
+    'as' => 'demote.admin'
+    ]);
+      //promote user to admin
+    Route::get('/admin/promote/{id}', [
+    'uses' => 'SuperAdminController@promote',
+    'as' => 'promote.user'
+    ]);
     //gets each request as selected by the user
     Route::get('announcement/each/{id}', [
     'uses' => 'AnnouncementController@get_each_announcements',

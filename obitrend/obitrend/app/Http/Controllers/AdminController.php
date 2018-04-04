@@ -169,10 +169,10 @@ class AdminController extends Controller
     //edit announcement function
     public function updateRequest( Request $request)
     {
-      // if(Auth::user()->access_level != 1){
-      //
-      //   return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
-      // }
+      if(Auth::user()->access_level != 1){
+
+        return redirect()->back()->withErrors(['message' =>'Access denied!!!']);
+      }
       //     /* edit function comes here */
         $response1 =  $request->all();
         $id=$response1['id'];

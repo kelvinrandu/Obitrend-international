@@ -93,7 +93,8 @@
 						                                <span class="titles">Get to view  all the announcements published on the site and comment</span>
 						                            </p>
 						                        </div>
-						                    </div>  @if(Auth::user()->access_level == 1)
+						                    </div>
+                                  @if(Auth::user()->access_level == 1)
 						                    <br><br>
 						                    <div class="row">
 						                        <div class="col-md-4">
@@ -106,6 +107,19 @@
 						                        </div>
 						                    </div>
 						                      @endif
+                                  @if(Auth::user()->access_level == 2)
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a class=" btn title green btn-outline "  style="background-color: 	#0b699c!important;border-color: #0b699c; width: 147px" href="{{route('super.admin.index')}}"> Admin &nbsp;<i class="fa fa-gavel"></i></a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="title">
+                                            <span class="titles">Switch to administrator dashboard and manage admin</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                  @endif
 						                </div>
 
 
