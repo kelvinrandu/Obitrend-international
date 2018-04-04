@@ -5,6 +5,7 @@ use App\Announcement;
 use Illuminate\Support\Facades\Input;
 use App\Tribute;
 use App\Comment;
+use App\Profile;
 use App\Notification;
 use Auth;
 use App\User;
@@ -275,6 +276,7 @@ class PassportController extends Controller
     }
 
     /* Fetch the artwork using the id */
+
           public function upload($id, Request $request){
 
           $image_path = 'public/upload/'.$id;
