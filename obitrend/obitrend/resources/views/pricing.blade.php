@@ -6,19 +6,9 @@
 <div class="page-container">
     <!-- BEGIN SIDEBAR -->
     <div class="page-sidebar-wrapper">
-        <!-- END SIDEBAR -->
-        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-        <div class="page-sidebar navbar-collapse collapse">
-            <!-- BEGIN SIDEBAR MENU -->
-            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
-            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
-            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
-            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
-            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 
-            <!-- END SIDEBAR MENU -->
+        <div class="page-sidebar navbar-collapse collapse">
+
         </div>
         <!-- END SIDEBAR -->
     </div>
@@ -27,7 +17,7 @@
     <div class="page-content-wrapper">
         <!-- BEGIN CONTENT BODY -->
         <div class="page-content">
-    
+
             <h1 class="page-title"> Pricing
                 <!-- <small>pricing table samples</small> -->
             </h1>
@@ -44,28 +34,7 @@
                 </ul>
                 <div class="page-toolbar">
                     <div class="btn-group pull-right">
-                        <!-- <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> Actions
-                            <i class="fa fa-angle-down"></i>
-                        </button> -->
-                        <!-- <ul class="dropdown-menu pull-right" role="menu">
-                            <li>
-                                <a href="#">
-                                    <i class="icon-bell"></i> Action</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-shield"></i> Another action</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-user"></i> Something else here</a>
-                            </li>
-                            <li class="divider"> </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-bag"></i> Separated link</a>
-                            </li>
-                        </ul> -->
+
                     </div>
                 </div>
             </div>
@@ -101,15 +70,15 @@
                                     <div class="price-table-pricing">
                                         <h3>
                                             <sup class="price-sign">$</sup>20</h3>
-                                        <p>per day</p>
+
                                         <div class="price-ribbon">Popular</div>
                                     </div>
                                     <div class="price-table-content">
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-user"></i>
+                                                <i class="icon-refresh"></i>
                                             </div>
-                                            <div class="col-xs-9 text-left mobile-padding">3 Members</div>
+                                            <div class="col-xs-9 text-left mobile-padding">for 3 days</div>
                                         </div>
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
@@ -145,14 +114,14 @@
                                     <div class="price-table-pricing">
                                         <h3>
                                             <sup class="price-sign">$</sup>40</h3>
-                                        <p>per day</p>
+                                        <p>for 3 days</p>
                                     </div>
                                     <div class="price-table-content">
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-user"></i>
+                                                <i class="icon-refresh"></i>
                                             </div>
-                                            <div class="col-xs-9 text-left mobile-padding">5 Members</div>
+                                            <div class="col-xs-9 text-left mobile-padding"> for 3 day</div>
                                         </div>
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
@@ -188,15 +157,15 @@
                                     <div class="price-table-pricing">
                                         <h3>
                                             <sup class="price-sign">$</sup>40</h3>
-                                        <p>per day</p>
+                                        <p>for 3 days</p>
 
                                     </div>
                                     <div class="price-table-content">
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-user-follow"></i>
+                                                <i class="icon-refresh"></i>
                                             </div>
-                                            <div class="col-xs-9 text-left mobile-padding">20 Members</div>
+                                            <div class="col-xs-9 text-left mobile-padding">  for 3 day</div>
                                         </div>
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
@@ -232,7 +201,7 @@
                                     <div class="price-table-pricing">
                                         <h3>
                                             <sup class="price-sign">$</sup>10</h3>
-                                        <p>per day</p>
+
                                     </div>
 
                                     <div class="price-table-content">
@@ -244,9 +213,9 @@
                                         </div>
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-drawer"></i>
+                                                <i class="icon-refresh"></i>
                                             </div>
-                                            <div class="col-xs-9 text-left mobile-padding">2TB Storage</div>
+                                            <div class="col-xs-9 text-left mobile-padding"> for 3 day</div>
                                         </div>
                                         <div class="row mobile-padding">
                                             <div class="col-xs-3 text-right mobile-padding">
