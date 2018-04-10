@@ -19,6 +19,11 @@ use InterImage;
 use PDF;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Str;
+use Mail;
+use App\Mail\verifyEmail;
+use Session;
 
 
 
@@ -45,6 +50,7 @@ class PassportController extends Controller
   public function register(Request $request){
     $validator = Validator::make($request->all(), [
       'first_name' => 'required|string|max:255',
+      'other_names' => 'required|string|max:255',
       'email' => 'required|string|email|max:255|unique:users',
      'password' => 'required|string|min:6',
       'gender' => 'required|boolean',
@@ -55,8 +61,22 @@ class PassportController extends Controller
     if ($validator->fails()){
         return response()->json(['error'=>$validator->errors()], 401);
     }
+
     $input = $request->all();
+    if($input['gender'])
+  {
+    $avatar = 'public/defaults/avatars/male.png';
+  }
+  else
+  {
+    $avatar = 'public/defaults/avatars/female.png';
+  }
     $input['password'] = bcrypt($input['password']);
+    $input['account_status'] = 1;
+    $input['access_level'] = 0;
+    $input['avatar'] = $avatar;
+    $input['slug'] = str_slug($input['first_name']);
+
     $user = User::create($input);
     $success['token'] = $user->createToken('MyApp')->
       accessToken;

@@ -19,11 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('other_names');
             $table->string('email');
             $table->string('phone_number');
-            $table->integer('access_level');
+            $table->integer('access_level')->default(0);
             $table->string('slug');
             $table->string('avatar');
             $table->string('my_country')->nullable();
-             $table->integer('gender');
+             $table->integer('gender')->default(0);
             //to signal if account is active or not
             $table->integer('account_status');
             $table->string('password');

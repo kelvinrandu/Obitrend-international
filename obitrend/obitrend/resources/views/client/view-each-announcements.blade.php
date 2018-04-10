@@ -55,7 +55,7 @@
 
 
 
-                                     <a href="{{ route('pdfview') }}">download</a>
+                                     <a href="{{ route('pdfview') }} "target="_blank" >download</a>
                               </li>
                                @endif
 
