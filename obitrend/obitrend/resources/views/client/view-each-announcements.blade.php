@@ -52,10 +52,10 @@
                               <li class="divider"> </li>
 
                               <li>
-                              <a href="{{ route('announcement.download') }}" download="public/downloads/info.pdf"
 
 
-                                     >Download euology </a>
+
+                                     <a href="{{ route('pdfview') }}">download</a>
                               </li>
                                @endif
 
@@ -91,12 +91,7 @@
                                     <li class="uppercase">
                                         <a href="javascript:;">{{ $request[0]->location }}</a>
                                     </li>
-                                    <!-- <li class="uppercase">
-                                        <a href="javascript:;">{{ $request[0]->location }}</a>
-                                    </li> -->
-                                    <!-- <li class="uppercase">
-                                        <a href="javascript:;">{{ $request[0]->description }}</a>
-                                    </li> -->
+
                                 </ul>
                             </div>
 
@@ -114,13 +109,7 @@
                                 <span class="caption-subject font-blue-madison bold uppercase">Tributes</span>
                                 <!-- <span class="caption-helper">45 pending</span> -->
                             </div>
-                            <!-- <div class="inputs">
-                                <div class="portlet-input input-inline input-small ">
-                                    <div class="input-icon right">
-                                        <i class="icon-magnifier"></i>
-                                        <input type="text" class="form-control form-control-solid" placeholder="search..."> </div>
-                                </div>
-                            </div> -->
+
                         </div>
 
 
@@ -156,11 +145,7 @@
                               </div>
 
 
-
-
                                        <?php }?>
-
-
 
                                    @endif
 

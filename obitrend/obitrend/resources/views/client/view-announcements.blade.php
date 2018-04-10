@@ -50,24 +50,6 @@
                 </div>
             </div>
             <!-- END PAGE HEADER-->
- <!-- <div class="col2">
-            <div id="js-filters-juicy-projects" class="cbp-l-filters-button">
-                                        <div data-filter="*" class="cbp-filter-item-active cbp-filter-item btn dark btn-outline uppercase"> All
-                                            <div class="cbp-filter-counter"></div>
-                                        </div>
-                                        <div data-filter=".identity" class="cbp-filter-item btn dark btn-outline uppercase"> Identity
-                                            <div class="cbp-filter-counter"></div>
-                                        </div>
-                                        <div data-filter=".web-design" class="cbp-filter-item btn dark btn-outline uppercase"> Web Design
-                                            <div class="cbp-filter-counter"></div>
-                                        </div>
-                                        <div data-filter=".graphic" class="cbp-filter-item btn dark btn-outline uppercase"> Graphic
-                                            <div class="cbp-filter-counter"></div>
-                                        </div>
-                                        <div data-filter=".logos" class="cbp-filter-item btn dark btn-outline uppercase"> Logo
-                                            <div class="cbp-filter-counter"></div>
-                                        </div> -->
-
 
             <div class="row">
 

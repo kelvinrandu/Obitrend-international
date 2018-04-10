@@ -9,7 +9,8 @@ use App\Tribute;
 use Illuminate\Http\Request;
 use App\Notifications\requestReceived;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\Response;
+// use Illuminate\Http\Response;
+ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,7 @@ use Session;
 use App\User;
 use App;
 use PDF;
+
 
 
 
@@ -61,8 +63,9 @@ class AnnouncementController extends Controller
 
     //checks for file upload(id picture)
     $this->validate($request,[
-  'description' => 'max:255',
+   'description' => 'max:255',
    'image_path' => 'required|image',
+   'file_path' => 'required|mimes:pdf'
 ]);
       if ($request->hasFile('image_path')&&$request->hasFile('image_thumb')&&$request->hasFile('file'))
       {
@@ -236,18 +239,18 @@ class AnnouncementController extends Controller
 
       /* test download*/
       public function download(){
-            // $filename = 'info.pdf';
-         //
-        //   $download_path = 'public/downloads/info.pdf';
-        //   $path = Storage::get($download_path);
-           $path = storage_path('app/downloads/info.pdf');
-         //  $pdf = App::make($path)->response();
-         //
-         //    // $pdf->loadHTML('<h1>Test</h1>');
-          return $pdf->download($download_path);
-         //  // ->header('Content-Type','application/pdf');
+        // $pdfContent = Storage::get($filePath);
+        $file = Storage::get('public/downloads/lego.pdf');
 
+       // for pdf, it will be 'application/pdf'
+       $type       = Storage::mimeType('public/downloads/lego.pdf');
+       // $fileName   = Storage::name('public/downloads/info.pdf');
+       $fileName   = 'eulogy.pdf';
 
+       return Response::make($file, 200, [
+         'Content-Type'        => $type,
+         'Content-Disposition' => 'inline; filename="'.$fileName.'"'
+       ]);
 
         }
 }
