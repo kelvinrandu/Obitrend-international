@@ -32,8 +32,7 @@ class PassportController extends Controller
 {
   public $successStatus = 200;
 
-
-
+//login controller
   public function login(){
     if(Auth::attempt(['email'=>request('email'),'password'=>request('password')])){
       $user = Auth::user();
@@ -46,7 +45,7 @@ class PassportController extends Controller
 
       }
   }
-
+//register controller
   public function register(Request $request){
     $validator = Validator::make($request->all(), [
       'first_name' => 'required|string|max:255',

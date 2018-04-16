@@ -238,19 +238,27 @@ class AnnouncementController extends Controller
       }
 
       /* test download*/
-      public function download(){
-        // $pdfContent = Storage::get($filePath);
-        $file = Storage::get('public/downloads/lego.pdf');
+      public function download($id){
+
+        $announcement = Announcement::find($id);
+          if($announcement){
+
+        $path =  Announcement::with('user')->where('id',$id)->value('file_path');
+        $file = Storage::get($path);
 
        // for pdf, it will be 'application/pdf'
-       $type       = Storage::mimeType('public/downloads/lego.pdf');
+       $type       = Storage::mimeType($path);
        // $fileName   = Storage::name('public/downloads/info.pdf');
        $fileName   = 'eulogy.pdf';
 
        return Response::make($file, 200, [
+
          'Content-Type'        => $type,
          'Content-Disposition' => 'inline; filename="'.$fileName.'"'
        ]);
 
         }
+        //if unsuccesful
+       return redirect()->back()->with('message','download not found');
+  }
 }

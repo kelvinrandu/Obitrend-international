@@ -92,12 +92,7 @@
                                             </div>
                                             <div class="col-xs-9 text-left mobile-padding">Single Device</div>
                                         </div>
-                                        <!-- <div class="row mobile-padding">
-                                            <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-refresh"></i>
-                                            </div>
-                                            <div class="col-xs-9 text-left mobile-padding">Weekly Backups</div>
-                                        </div> -->
+
                                     </div>
                                     <div class="arrow-down arrow-grey"></div>
                                     <div class="price-table-footer">
@@ -135,12 +130,7 @@
                                             </div>
                                             <div class="col-xs-9 text-left mobile-padding">Single Device</div>
                                         </div>
-                                        <div class="row mobile-padding">
-                                            <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-refresh"></i>
-                                            </div>
-                                            <div class="col-xs-9 text-left mobile-padding">Weekly Backups</div>
-                                        </div>
+
                                     </div>
                                     <div class="arrow-down arrow-grey"></div>
                                     <div class="price-table-footer">
@@ -179,12 +169,7 @@
                                             </div>
                                             <div class="col-xs-9 text-left mobile-padding">Cloud Syncing</div>
                                         </div>
-                                        <div class="row mobile-padding">
-                                            <div class="col-xs-3 text-right mobile-padding">
-                                                <i class="icon-refresh"></i>
-                                            </div>
-                                            <div class="col-xs-9 text-left mobile-padding">Daily Backups</div>
-                                        </div>
+
                                     </div>
                                     <div class="arrow-down arrow-grey"></div>
                                     <div class="price-table-footer">
