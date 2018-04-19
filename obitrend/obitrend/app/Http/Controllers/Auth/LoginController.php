@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -97,6 +98,12 @@ class LoginController extends Controller
 
 
 
+   }
+   //checks user status before login them in
+   protected function credentials(Request $request)
+   {
+    //   return $request->only($this->username(), 'password');
+    return ['email'=>$request->{$this->username()}, 'password'=>$request->password,'status'=>'1'];
    }
 
 }
