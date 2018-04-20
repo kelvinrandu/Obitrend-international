@@ -369,4 +369,21 @@ class PassportController extends Controller
                     }
         }
 
+  //Death announcement
+    public function deathannouncement(){
+
+    }
+  //Public announcements
+    public function public(){
+
+    }
+//Missing persons
+  public function missing(){
+
+  }
+  //anniversaries
+    public function anniversaries(){
+
+    }
+
 }

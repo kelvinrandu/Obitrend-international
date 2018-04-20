@@ -45,6 +45,26 @@ Route::group(['middleware' => 'auth:api'], function()
   'uses' => 'API\PassportController@createTributes',
   'as' => 'client.tributes'
   ]);
+  //client Death announcement
+  // Route::post('get/deathannouncement', [
+  // 'uses' => 'API\PassportController@deathannouncement',
+  // 'as' => 'client.deathannouncement'
+  // ]);
+  //client public announcement
+  // Route::post('get/public', [
+  // 'uses' => 'API\PassportController@public',
+  // 'as' => 'client.public'
+  // ]);
+  //client missing person
+  // Route::post('get/missing', [
+  // 'uses' => 'API\PassportController@missing',
+  // 'as' => 'client.missing'
+  // ]);
+  //client
+  // Route::post('get/anniversaries', [
+  // 'uses' => 'API\PassportController@anniversaries',
+  // 'as' => 'client.anniversaries'
+  // ]);
   /*updates the avatar*/
      Route::post('/profile/update/avatar',[
     'uses' => 'API\PassportController@update',
