@@ -42,7 +42,7 @@ class RequestLive extends Notification
     {
         return (new MailMessage)
         ->line('Your request is now live . you can view your announcement in the view announcements on the Obitrend site ')
-        ->action('View request', url('http://localhost:8000/login'))
+        ->action('View request', url('http://obitrend.com'))
         ->line('Thank you for using our application!');
     }
 

@@ -9,8 +9,8 @@ use App\Tribute;
 use Illuminate\Http\Request;
 use App\Notifications\requestReceived;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-// use Illuminate\Http\Response;
- use Illuminate\Support\Facades\Response;
+ use Illuminate\Http\Response;
+ // use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
@@ -65,7 +65,7 @@ class AnnouncementController extends Controller
     $this->validate($request,[
    'description' => 'max:255',
    'image_path' => 'required|image',
-   'file_path' => 'required|mimes:pdf'
+    // 'file_path' => 'required|mimes:pdf',
 ]);
       if ($request->hasFile('image_path')&&$request->hasFile('image_thumb')&&$request->hasFile('file'))
       {
