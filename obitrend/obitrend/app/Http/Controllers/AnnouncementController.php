@@ -63,7 +63,7 @@ class AnnouncementController extends Controller
 
     //checks for file upload(id picture)
     $this->validate($request,[
-   'description' => 'max:255',
+   'description' => 'max:500',
    'image_path' => 'required|image',
     // 'file_path' => 'required|mimes:pdf',
 ]);
@@ -105,7 +105,8 @@ class AnnouncementController extends Controller
 
 
              $path = $request->image_path->store('public/id');
-             $file = $request->image_thumb->store('public/upload');
+              $file = $request->image_thumb->store('public/upload');
+
 
         //creates announcements
 

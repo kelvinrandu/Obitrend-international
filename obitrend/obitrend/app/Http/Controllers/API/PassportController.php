@@ -51,7 +51,7 @@ class PassportController extends Controller
       'first_name' => 'required|string|max:255',
       'other_names' => 'required|string|max:255',
       'email' => 'required|string|email|max:255|unique:users',
-     'password' => 'required|string|min:6',
+      'password' => 'required|string|min:6',
       'gender' => 'required|boolean',
       'my_country' => 'required',
 
@@ -75,12 +75,26 @@ class PassportController extends Controller
     $input['access_level'] = 0;
     $input['avatar'] = $avatar;
     $input['slug'] = str_slug($input['first_name']);
+    $input['verifyToken']  = Str::random(40);
+    $input['status']  = 0 ;
 
     $user = User::create($input);
     $success['token'] = $user->createToken('MyApp')->
       accessToken;
       $success['first_name'] = $user->first_name;
+      $success['message'] = 'Registered! but verify your email to activate your acccount';
+
+      //after successful registration send the new  user an email to activate account
+      Profile::create(['user_id' => $user->id]);
+      $thisUser = User::findOrFail($user->id);
+      $this->sendEmail($thisUser);
         return response()->json(['success'=> $success], $this->successStatus);
+
+  }
+//this function sends email  newly registered user
+  public function sendEmail($thisUser)
+  {
+     Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
 
   }
   //this function gets all announcements
