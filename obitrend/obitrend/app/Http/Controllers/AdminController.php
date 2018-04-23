@@ -101,7 +101,7 @@ class AdminController extends Controller
 
        $user = User::find($id);
       if($user){
-       $user->account_status =0;
+       $user->status =0;
        $user->save();
 
          return Redirect::to('/admin')->with('message','User blocked successfully');
