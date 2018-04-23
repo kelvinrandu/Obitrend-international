@@ -82,12 +82,15 @@ class PassportController extends Controller
     $success['token'] = $user->createToken('MyApp')->
       accessToken;
       $success['first_name'] = $user->first_name;
-      $success['message'] = 'Registered! but verify your email to activate your acccount';
+      $success['message'] = 'Registered!  but verify your email to activate your acccount';
 
-      //after successful registration send the new  user an email to activate account
+      //create a record of the user in the profile table
       Profile::create(['user_id' => $user->id]);
+
+      //after successful registration find the id of the new user and parse it to sendmail function
       $thisUser = User::findOrFail($user->id);
       $this->sendEmail($thisUser);
+
         return response()->json(['success'=> $success], $this->successStatus);
 
   }
