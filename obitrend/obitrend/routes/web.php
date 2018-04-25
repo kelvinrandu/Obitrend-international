@@ -19,6 +19,7 @@ Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider')->name('fa
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
  Route::get('/about', 'LandingController@index')->name('about');
+ // Route::get('/privacy', 'LandingController@download')->name('privacy');
  Route::get('/pricing', 'LandingController@pricing')->name('pricing');
  Route::get('/', 'LandingController@welcome')->name('welcome');
  //verify email route

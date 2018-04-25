@@ -5,16 +5,10 @@ use App\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
  // use Illuminate\Http\Response;
  use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
-use InterImage;
 use Intervention\Image\ImageManagerStatic as Image;
-use Session;
 use App\User;
 use App;
 use PDF;
@@ -45,4 +39,28 @@ class LandingController extends Controller
       return view('welcome');
   }
 
+//    /* test download*/
+//   public function download(){
+//
+//     $announcement = Announcement::find($id);
+//       if($announcement){
+//
+//     $path =  Announcement::with('user')->where('id',$id)->value('file_path');
+//     $file = Storage::get($path);
+//
+//    // for pdf, it will be 'application/pdf'
+//    $type       = Storage::mimeType($path);
+//     $fileName   = Storage::name('public/downloads/info.pdf');
+//    $fileName   = 'eulogy.pdf';
+//
+//    return Response::make($file, 200, [
+//
+//      'Content-Type'        => $type,
+//      'Content-Disposition' => 'inline; filename="'.$fileName.'"'
+//    ]);
+//
+//     }
+//     //if unsuccesful
+//    return redirect()->back()->with('message','download not found');
+// }
 }
