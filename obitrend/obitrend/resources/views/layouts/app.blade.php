@@ -17,11 +17,7 @@
         <meta content="Preview page of Metronic Admin Theme #2 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
           <!-- Facebook metatags -->
-          <meta property="og:url"           content="http://localhost:8000/announcement/each/{{  $request[0]->id }}" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="{{  $request[0]->title }}" />
-	<meta property="og:description"   content="{{  $request[0]->description}}" />
-	<meta property="og:image"         content="{{ asset('layout_assets/layouts/layout2/img/logo-default.png')}}" />
+
 
           <!-- end here -->
         <!-- BEGIN GLOBAL MANDATORY STYLES -->

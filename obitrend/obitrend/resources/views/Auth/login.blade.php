@@ -440,7 +440,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     <label class="mt-checkbox mt-checkbox-outline">
                         <input type="checkbox" name="tnc" /> I agree to the
                         <a href="javascript:;">Terms of Service </a> &
-                        <a href="javascript:;">Privacy Policy </a>
+                        <!-- <a href="javascript:;">Privacy Policy </a> -->
+                         <a href="{{asset('layout_assets/layouts/pdf/privacy-policy')}}"  target="_blank">Privacy Policy </a>
                         <span></span>
                     </label>
                     <div id="register_tnc_error"> </div>
