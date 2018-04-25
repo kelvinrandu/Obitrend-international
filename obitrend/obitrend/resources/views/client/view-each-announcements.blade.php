@@ -36,9 +36,9 @@
                         <ul class="dropdown-menu pull-right" role="menu">
                           <!-- <ul class="dropdown-menu pull-right"> -->
                               <li>
+                                <?php $url= url("/announcements/show/".$request[0]->id);  ?>
+                              <a href="javascript:void(0);" onclick="fb_share('{{ $url }}', '{{ $request[0]->title }}')" class="fbBtm">  <i class="fa fa-linkedin"></i>facebook </a>`
 
-                                  <a class="fb-share-button" data-href="" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2F&amp;src=sdkpreparse">
-                                      <i class="fa fa-facebook"></i> Facebook</a>
                               </li>
                               <li>
                                   <a href="javascript:;">

@@ -16,6 +16,14 @@
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #2 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
+          <!-- Facebook metatags -->
+          <meta property="og:url"           content="http://localhost:8000/announcement/each/{{  $request[0]->id }}" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="{{  $request[0]->title }}" />
+	<meta property="og:description"   content="{{  $request[0]->description}}" />
+	<meta property="og:image"         content="{{ asset('layout_assets/layouts/layout2/img/logo-default.png')}}" />
+
+          <!-- end here -->
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -332,6 +340,33 @@
     </div>
 
     <!-- Scripts -->
+    <!-- facebook share script -->
+    <div id="fb-root"></div>
+    <script>
+(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id))
+            return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=facebook_app_id";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+function fb_share(dynamic_link,dynamic_title) {
+    var app_id = '228449891236901';
+    var pageURL="https://www.facebook.com/dialog/feed?app_id=" + app_id + "&link=" + dynamic_link;
+    var w = 600;
+    var h = 400;
+    var left = (screen.width / 2) - (w / 2);
+    var top = (screen.height / 2) - (h / 2);
+    window.open(pageURL, dynamic_title, 'toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=no, resizable=no, copyhistory=no, width=' + 800 + ', height=' + 650 + ', top=' + top + ', left=' + left)
+    return false;
+}
+</script>
+
+
+    <!-- ends here -->
 
             <!-- BEGIN CORE PLUGINS -->
             <script src="{{asset('layout_assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
