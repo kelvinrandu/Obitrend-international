@@ -12,12 +12,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #2 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
           <!-- Facebook metatags -->
-          <meta property="og:url"           content="http://obitrend.com/announcement/each/{{  $request[0]->id }}" />
+          <meta property="og:url"           content="http://localhost:8000/announcements/show/{{  $request[0]->id }}" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="{{  $request[0]->title }}" />
 	<meta property="og:description"   content="{{  $request[0]->description}}" />
@@ -610,7 +610,7 @@ if (d.getElementById(id))
     return;
 js = d.createElement(s);
 js.id = id;
-js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=facebook_app_id";
+js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=228449891236901";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 

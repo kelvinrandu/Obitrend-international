@@ -12,6 +12,8 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'allowedFileTypes' => 'pdf',
+    'maxFileSize' => '1024',
 
     'name' => env('APP_NAME', 'Laravel'),
 

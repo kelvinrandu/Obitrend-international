@@ -350,20 +350,33 @@ class PassportController extends Controller
 
           }
 
-          /* test download*/
-          public function download(){
 
-              $download_path = 'public/downloads/info.pdf';
-                 $path = Storage::get($download_path);
-                $pdf = App::make($path);
-               // $pdf = App::make('dompdf.wrapper');
-               $pdf->loadHTML('<h1>Test</h1>');
-               return $pdf->stream('info.pdf')
-             ->header('Content-Type','application/pdf');
+  /* test download*/
+  public function download($id){
+    $error = "download unsuccesful";
 
+    $announcement = Announcement::find($id);
+      if($announcement){
 
+    $path =  Announcement::with('user')->where('id',$id)->value('file_path');
+    $file = Storage::get($path);
 
-            }
+   // for pdf, it will be 'application/pdf'
+   $type       = Storage::mimeType($path);
+   // $fileName   = Storage::name('public/downloads/info.pdf');
+   $fileName   = 'eulogy.pdf';
+
+   return Response::make($file, 200, [
+
+     'Content-Type'        => $type,
+     'Content-Disposition' => 'inline; filename="'.$fileName.'"'
+   ]);
+
+    }
+                  //if unsuccesful
+    return response()->json(['error'=>$error ], 401);
+  }
+
   //change avatar
   public function update(Request $request)  {
     $success = "success";

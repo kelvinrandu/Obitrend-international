@@ -177,9 +177,9 @@ License: You must have a valid license purchased only from themeforest(the above
                         <option value="1">Male</option>
                         <option value="0">Female</option>
                     </select> </div>
+   <div class="form-group">
 
- <div class="form-group">
-                    <label class="control-label visible-ie8 visible-ie9">Country</label>
+                    <label class="control-label col-md-3"></label>
                     <select name="my_country"  class="form-control">
                         <option value="">Country</option>
                         <option value="AF">Afghanistan</option>

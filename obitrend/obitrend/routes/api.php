@@ -45,6 +45,10 @@ Route::group(['middleware' => 'auth:api'], function()
   'uses' => 'API\PassportController@createTributes',
   'as' => 'client.tributes'
   ]);
+  Route::get('storage/downloads/{id}', [
+  'uses' => 'AnnouncementController@download',
+  'as' => 'client.download'
+  ]);
   //client Death announcement
   // Route::post('get/deathannouncement', [
   // 'uses' => 'API\PassportController@deathannouncement',
