@@ -17,7 +17,7 @@
         <meta content="Preview page of Metronic Admin Theme #2 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
           <!-- Facebook metatags -->
-          <meta property="og:url"           content="http://localhost:8000/announcements/show/{{  $request[0]->id }}" />
+  <meta property="og:url"           content=" http://obitrend.com/announcement/each/{{  $request[0]->id }}" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="{{  $request[0]->title }}" />
 	<meta property="og:description"   content="{{  $request[0]->description}}" />
@@ -368,7 +368,7 @@
                               <li>
                                 <?php $url= url("/announcements/show/".$request[0]->id);  ?>
                               <a href="javascript:void(0);" onclick="fb_share('{{ $url }}', '{{ $request[0]->title }}')" class="fbBtm">  <i class="fa fa-linkedin"></i>facebook </a>`
-
+<button onclick="myFunction()">Click me</button>
                               </li>
                               <li>
                                   <a href="javascript:;">
@@ -603,28 +603,12 @@
 <!-- Scripts -->
 <!-- facebook share script -->
 <div id="fb-root"></div>
-<script>
-(function (d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id))
-    return;
-js = d.createElement(s);
-js.id = id;
-js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=228449891236901";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+<button onclick="myFunction()">Click me</button>
 
-function fb_share(dynamic_link,dynamic_title) {
-var app_id = '228449891236901';
-var pageURL="https://www.facebook.com/dialog/feed?app_id=" + app_id + "&link=" + dynamic_link;
-var w = 600;
-var h = 400;
-var left = (screen.width / 2) - (w / 2);
-var top = (screen.height / 2) - (h / 2);
-window.open(pageURL, dynamic_title, 'toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=no, resizable=no, copyhistory=no, width=' + 800 + ', height=' + 650 + ', top=' + top + ', left=' + left)
-return false;
-}
-</script>
+<p id="demo"></p>
+
+
+
 
 
 <!-- ends here -->
@@ -645,8 +629,14 @@ return false;
     <script src="{{asset('layout_assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}" type="text/javascript"></script>
     <script src="{{asset('layout_assets/global/plugins/jquery.sparkline.min.js')}}" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
+    <script>
+    function myFunction() {
+    console.log('knjknjk');
+    }
+    </script>
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src="{{asset('layout_assets/global/scripts/app.min.js')}}" type="text/javascript"></script>
+      <script src="{{asset('layout_assets/global/scripts/facebook.js')}}" type="text/javascript"></script>
     <!-- END THEME GLOBAL SCRIPTS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{asset('layout_assets/pages/scripts/form-wizard.min.js')}}" type="text/javascript"></script>
