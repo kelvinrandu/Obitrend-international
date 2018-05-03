@@ -17,11 +17,20 @@
         <meta content="Preview page of Metronic Admin Theme #2 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
           <!-- Facebook metatags -->
-  <meta property="og:url"           content=" http://obitrend.com/announcement/each/{{  $request[0]->id }}" />
+  <meta property="og:url"           content=" http://obitrend.com/announcements/show/{{  $request[0]->id }}" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="{{  $request[0]->title }}" />
 	<meta property="og:description"   content="{{  $request[0]->description}}" />
 	<meta property="og:image"         content="{{ asset('layout_assets/layouts/layout2/img/logo-default.png')}}" />
+
+          <!-- end here -->
+          <!-- Twitter metatags -->
+  <meta name="twitter:card"           content="summary_large_image" />
+  <meta name="twitter:site"          content="@randu_kelvin" />
+  <meta name="twitter:creator"       content="@randu_kelvin" />
+  <meta name="twitter:title"   content="{{  $request[0]->title }}" />
+  <meta name="twitter:description"     content="{{  $request[0]->description}}" />
+  <meta name="twitter:image"         content="{{ asset('layout_assets/layouts/layout2/img/logo-default.png')}}" />
 
           <!-- end here -->
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -55,14 +64,6 @@
 
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
     <div id="app">
 
 
@@ -367,16 +368,17 @@
                           <!-- <ul class="dropdown-menu pull-right"> -->
                               <li>
                                 <?php $url= url("/announcements/show/".$request[0]->id);  ?>
-                              <a href="javascript:void(0);" onclick="fb_share('{{ $url }}', '{{ $request[0]->title }}')" class="fbBtm">  <i class="fa fa-linkedin"></i>facebook </a>`
-<button onclick="myFunction()">Click me</button>
+
+                                <a href="javascript:void(0);" onclick="fb_share('{{ $url }}', '{{ $request[0]->id }}')" class="social-share__facebook" title="share on facebook">facebook</a>
+                              <!-- <a href="javascript:void(0);" onclick="fb_share()" class="fbBtm">  </i>facebook </a>` -->
                               </li>
                               <li>
                                   <a href="javascript:;">
                                       <i class="fa fa-linkedin"></i> Linkedin </a>
                               </li>
                               <li>
-                                  <a href="javascript:;">
-                                      <i class="fa fa-twitter"></i> Twitter</a>
+                                  <a href="https://twitter.com/intent/tweet?url={{ $url }}&text={{ $request[0]->title }}">
+                                      <i class="fa fa-twitter"></i> Tweet</a>
                               </li>
                               @if(($request[0]->type_of_announcement)=="Deathannouncement")
                               <li class="divider"> </li>
@@ -603,9 +605,7 @@
 <!-- Scripts -->
 <!-- facebook share script -->
 <div id="fb-root"></div>
-<button onclick="myFunction()">Click me</button>
 
-<p id="demo"></p>
 
 
 
@@ -630,13 +630,25 @@
     <script src="{{asset('layout_assets/global/plugins/jquery.sparkline.min.js')}}" type="text/javascript"></script>
     <!-- END PAGE LEVEL PLUGINS -->
     <script>
-    function myFunction() {
-    console.log('knjknjk');
+    function fb_share(dynamic_link,dynamic_title) {
+      var app_id = '228449891236901';
+      // var  dynamic_title = 'msando';
+      // var dynamic_link= 'http://obitrend.com/announcements/show/2';fb_share()
+      var pageURL="https://www.facebook.com/dialog/feed?app_id=" + app_id + "&link=" + dynamic_link;
+      var w = 600;
+      var h = 400;
+      var left = (screen.width / 2) - (w / 2);
+      var top = (screen.height / 2) - (h / 2);
+      window.open(pageURL, dynamic_title, 'toolbar=no, location=no, directories=no, status=no, menubar=yes, scrollbars=no, resizable=no, copyhistory=no, width=' + 800 + ', height=' + 650 + ', top=' + top + ', left=' + left)
+      return false;
+
     }
+
+
     </script>
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src="{{asset('layout_assets/global/scripts/app.min.js')}}" type="text/javascript"></script>
-      <script src="{{asset('layout_assets/global/scripts/facebook.js')}}" type="text/javascript"></script>
+      <!-- <script src="{{asset('layout_assets/global/scripts/facebook.js')}}" type="text/javascript"></script> -->
     <!-- END THEME GLOBAL SCRIPTS -->
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <script src="{{asset('layout_assets/pages/scripts/form-wizard.min.js')}}" type="text/javascript"></script>
