@@ -5,6 +5,9 @@ use App\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use App\Tribute;
+use App\Comment;
+use Illuminate\Support\Facades\Storage;
  // use Illuminate\Http\Response;
  use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\File;
@@ -12,6 +15,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 use App\User;
 use App;
 use PDF;
+use App\Notification;
 
 
 
@@ -38,29 +42,41 @@ class LandingController extends Controller
   {
       return view('welcome');
   }
+  public function get_each_announcements($id)
+  {
+    //gets each announcement
+      $request =  Announcement::with('user')->where('id',$id)->get();
+      $tribute =  Tribute::with('user')->where('announcement_id',$id)->get();
+      $comment =  Comment::with('user')->where('announcement_id',$id)->get();
 
-//    /* test download*/
-//   public function download(){
-//
-//     $announcement = Announcement::find($id);
-//       if($announcement){
-//
-//     $path =  Announcement::with('user')->where('id',$id)->value('file_path');
-//     $file = Storage::get($path);
-//
-//    // for pdf, it will be 'application/pdf'
-//    $type       = Storage::mimeType($path);
-//     $fileName   = Storage::name('public/downloads/info.pdf');
-//    $fileName   = 'eulogy.pdf';
-//
-//    return Response::make($file, 200, [
-//
-//      'Content-Type'        => $type,
-//      'Content-Disposition' => 'inline; filename="'.$fileName.'"'
-//    ]);
-//
-//     }
-//     //if unsuccesful
-//    return redirect()->back()->with('message','download not found');
-// }
+     $requests = Notification::all();
+
+//return $time->diffForHumans();
+ return view('client.view-each-announcements',['requests' => $requests, 'request' => $request ,'tribute' => $tribute  ,'comment' =>$comment ]);
+
+  }
+  /* Fetch the artwork using the id */
+        public function upload($id, Request $request){
+
+        $image_path = 'public/upload/'.$id;
+
+        $image = Storage::get($image_path);
+
+        /* Return the file */
+         return Image::make($image)->resize(240, 200)->response();
+
+    }
+
+      /* Fetch the image using the id */
+            public function avatar($id, Request $request){
+
+
+          $image_path = 'public/defaults/avatars/'.$id;
+
+            $image = Storage::get($image_path);
+
+            /* Return the file */
+             return Image::make($image)->resize(240, 180)->response();
+
+        }
 }

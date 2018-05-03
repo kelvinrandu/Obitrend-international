@@ -20,6 +20,15 @@ Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallbac
 
  Route::get('/about', 'LandingController@index')->name('about');
  // Route::get('/privacy', 'LandingController@download')->name('privacy');
+ /* gets content for share*/
+ Route::get('/announcements/show/{id}', [
+ 'uses' => 'LandingController@get_each_announcements',
+ 'as' => 'client.share'
+ ]);
+
+ //routes to extract images from storage
+ Route::get('storage/upload/{id}','LandingController@upload');
+ Route::get('storage/defaults/avatars/{id}','LandingController@avatar');
  Route::get('/pricing', 'LandingController@pricing')->name('pricing');
  Route::get('/', 'LandingController@welcome')->name('welcome');
  //verify email route
@@ -100,10 +109,10 @@ Route::group(['middleware' => 'auth'], function()
     ]);
 
     //fetches each announcement
-    Route::get('/announcements/show/{id}', [
-    'uses' => 'AnnouncementController@announcements',
-    'as' => 'client.view.each'
-    ]);
+    // Route::get('/announcements/show/{id}', [
+    // 'uses' => 'AnnouncementController@announcements',
+    // 'as' => 'client.view.each'
+    // ]);
     Route::get('/admin/request/{id}', [
     'uses' => 'AdminController@get_request',
     'as' => 'admin.get.request'
@@ -156,6 +165,7 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AnnouncementController@create_comments',
     'as' => 'create.comments'
     ]);
+    /* download path*/
     Route::get('storage/downloads/{id}', [
     'uses' => 'AnnouncementController@download',
     'as' => 'announcement.download'
@@ -163,12 +173,10 @@ Route::group(['middleware' => 'auth'], function()
 
 
     //routes to extract images from storage
-    Route::get('storage/upload/{id}','AnnouncementController@upload');
-        // Route::get('storage/downloads/{id}','AnnouncementController@download');
-    Route::get('storage/id/{id}','AnnouncementController@id');
-    Route::get('storage/defaults/avatars/{id}','AnnouncementController@avatar');
-  //  Route::get('downloads/','AnnouncementController@download')->name('announcement.download');
-    Route::get('pdfview',array('as'=>'pdfview','uses'=>'AnnouncementController@download'));
+    // Route::get('storage/upload/{id}','AnnouncementController@upload');
+     Route::get('storage/id/{id}','AnnouncementController@id');
+    // Route::get('storage/defaults/avatars/{id}','AnnouncementController@avatar');
+    // Route::get('pdfview',array('as'=>'pdfview','uses'=>'AnnouncementController@download'));
 
 
 });
