@@ -21,9 +21,14 @@ Route::post('register', 'API\PassportController@register');
 Route::group(['middleware' => 'auth:api'], function()
 {
   //get all announcements
+  Route::post('my/country/{id}', [
+  'uses' => 'API\PassportController@getDetailsCountry',
+  'as' => 'client.api.index'
+  ]);
+  //get my country announcements
   Route::post('get-user', [
   'uses' => 'API\PassportController@getDetails',
-  'as' => 'client.api.index'
+  'as' => 'client.my.country'
   ]);
   //get each announcement
   Route::post('get/each/{id}', [

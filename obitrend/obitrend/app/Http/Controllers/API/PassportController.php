@@ -138,6 +138,52 @@ class PassportController extends Controller
     return response()->json(['error'=>$error ], 401);
     }
   }
+  //this function gets my country announcements
+  public function getDetailsCountry($id){
+
+   $user = User::find($id);
+    if($user){
+
+      $myCountry= DB::table('users')->where('id',1)
+      ->value('my_country');
+
+      //fetches  all approved requests based on type
+  $announcements = DB::table('announcements')->where('is_featured',1)
+  ->where('type_of_announcement','Deathannouncement')
+  ->where('country',$myCountry)
+  ->get();
+  $missing = DB::table('announcements')->where('is_featured',1)
+  ->where('type_of_announcement','Missingperson')
+  ->where('country',$myCountry)
+  ->get();
+  $public = DB::table('announcements')->where('is_featured',1)
+  ->where('type_of_announcement','PublicNotice')
+  ->where('country',$myCountry)
+  ->get();
+  $Anniversaries = DB::table('announcements')->where('is_featured',1)
+  ->where('type_of_announcement','Anniversaries')
+  ->where('country',$myCountry)
+  ->get();
+
+
+  $Anniversaries =  array('anniversaries' => $Anniversaries);
+  $announcements = array('announcements' => $announcements );
+  $missing = array('missing' => $missing);
+  $public =  array('public' => $public);
+
+  //merge all requests
+  $all = array_merge($public,$Anniversaries,$announcements,$missing);
+
+  //get all notifications.dummy
+  $requests = Notification::all();
+
+    return response()->json(['success'=> $user, 'data'=>$all], $this->successStatus);
+  }else{
+    //if not succesfull then return error
+      $error = "not found";
+    return response()->json(['error'=>$error ], 401);
+    }
+  }
 
   //this function gets each announcement and their necessary comments
   public function eachAnnouncement($id){
