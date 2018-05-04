@@ -149,15 +149,16 @@ class PassportController extends Controller
 //if the announcement is death announcement then fetch tributes
     if($each[0]->type_of_announcement =='Deathannouncement'){
 
-      $tributes = DB::table('tributes')->where('announcement_id',$id)
+      $tributes = Tribute::with('user')->where('announcement_id',$id)
           ->get();
 
           return response()->json(['success'=>$each, 'tributes'=>  $tributes], $this->successStatus);
 //else if it is not then fetch comments
     }else{
 
-          $comments = DB::table('comments')->where('announcement_id',$id)
+          $comments = Comment::with('user')->where('announcement_id',$id)
           ->get();
+
           return response()->json(['success'=>$each, 'comments'=>  $comments ], $this->successStatus);
 
     }

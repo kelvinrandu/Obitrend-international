@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}"  prefix="og: http://ogp.me/ns#" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 
     <!-- CSRF Token -->
@@ -31,6 +32,13 @@
   <meta name="twitter:title"   content="{{  $request[0]->title }}" />
   <meta name="twitter:description"     content="{{  $request[0]->description}}" />
   <meta name="twitter:image"         content="{{ asset('layout_assets/layouts/layout2/img/logo-default.png')}}" />
+
+          <!-- end here -->
+          <!-- LinkedIn metatags -->
+          <meta property="og:title" content="{{  $request[0]->title }}" />
+          <meta property="og:description" content="{{  $request[0]->description }}  />
+          <meta property="og:url"           content=" http://obitrend.com/announcements/show/{{  $request[0]->id }}" />
+          <meta property="og:image" content="{{ asset('layout_assets/layouts/layout2/img/logo-default.png')}}" />
 
           <!-- end here -->
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -369,12 +377,14 @@
                               <li>
                                 <?php $url= url("/announcements/show/".$request[0]->id);  ?>
 
-                                <a href="javascript:void(0);" onclick="fb_share('{{ $url }}', '{{ $request[0]->id }}')" class="social-share__facebook" title="share on facebook">facebook</a>
+                                <a href="javascript:void(0);" onclick="fb_share('{{ $url }}', '{{ $request[0]->id }}')" class="social-share__facebook" title="share on facebook">  <i class="fa fa-facebook"></i>facebook</a>
                               <!-- <a href="javascript:void(0);" onclick="fb_share()" class="fbBtm">  </i>facebook </a>` -->
                               </li>
                               <li>
-                                  <a href="javascript:;">
-                                      <i class="fa fa-linkedin"></i> Linkedin </a>
+                                <script type="IN/Share" data-url="{{ $url }}" data-counter="top">  <i class="fa fa-linkedin"></i></script>
+
+
+
                               </li>
                               <li>
                                   <a href="https://twitter.com/intent/tweet?url={{ $url }}&text={{ $request[0]->title }}">
@@ -646,6 +656,8 @@
 
 
     </script>
+    <script src="http://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+
     <!-- BEGIN THEME GLOBAL SCRIPTS -->
     <script src="{{asset('layout_assets/global/scripts/app.min.js')}}" type="text/javascript"></script>
       <!-- <script src="{{asset('layout_assets/global/scripts/facebook.js')}}" type="text/javascript"></script> -->
