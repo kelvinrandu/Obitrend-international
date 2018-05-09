@@ -14,7 +14,7 @@ class ChangeDescriptionTable extends Migration
     public function up()
     {
         Schema::table('announcements', function (Blueprint $table) {
-           $table->longText('description')->nullable()->change();
+           $table->longText('description')->change();
         });
     }
 

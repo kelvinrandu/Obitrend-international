@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use InterImage;
 use PDF;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -38,6 +39,7 @@ class PassportController extends Controller
       $user = Auth::user();
       $success['token']= $user->createToken('MyApp')->
       accessToken;
+        $success['user']= $user;
       return response()->json(['success'=>$success],$this
       ->successStatus);
     }else{
@@ -83,6 +85,7 @@ class PassportController extends Controller
       accessToken;
       $success['first_name'] = $user->first_name;
       $success['message'] = 'Registered!  but verify your email to activate your acccount';
+      $success['user']= $user;
 
       //create a record of the user in the profile table
       Profile::create(['user_id' => $user->id]);
@@ -223,9 +226,10 @@ class PassportController extends Controller
           $message = "request received successfully";
 
            //checks for file upload(id picture)
-          $this->validate($request,[
-         'description' => 'max:255',
-         'image_path' => 'required|image',
+      $validator = Validator::make($request->all(), [
+        'description' => 'max:255',
+        'image_path' => 'required|image',
+
       ]);
 
       if ($validator->fails()){
