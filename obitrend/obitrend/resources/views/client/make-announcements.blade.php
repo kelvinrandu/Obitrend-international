@@ -438,7 +438,7 @@
 
 
                                                 <div class="form-group">
-                                                    <label class="control-label col-md-3">Payment
+                                                    <label class="control-label col-md-3">Paybill( for death announcements )
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
@@ -541,6 +541,7 @@
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="card_name"> </p>
                                                     </div>
+                                                    
                                                 </div>
                                                 <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">Card Number:</label>
@@ -565,6 +566,7 @@
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="payment[]"> </p>
                                                     </div>-->
+
                                                 </div>
                                             </div>
                                         </div>
@@ -598,6 +600,6 @@
     <a href="javascript:;" class="page-quick-sidebar-toggler">
         <i class="icon-login"></i>
     </a>
-  
+
 
 @endsection

@@ -156,6 +156,10 @@ class AdminController extends Controller
         //find the user who made the request
         $me = DB::table('announcements')->where('id',$id)
         ->value('user_id');
+        //activate count date method for this announcements
+        /* Start here */
+
+        /*end here*/
         //notify the user by mail
         $user = User::find($me);
         $user->notify(new requestLive());

@@ -384,7 +384,7 @@
 						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
 						<div class="testimonial--meta">
 							<h4>Kelvin Randu</h4>
-							<p>C4DLab</p>
+							<p>BLuprint Africa</p>
 						</div><!-- .testimonial-meta end -->
 					</div><!-- .testimonial-panel end -->
 
@@ -399,8 +399,8 @@
 						</div><!-- .testimonial-body end -->
 						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
 						<div class="testimonial--meta">
-							<h4>Mostafa Mabrook</h4>
-							<p>Code 125</p>
+							<h4>Edwin Ochieng</h4>
+							<p>C4dlab</p>
 						</div><!-- .testimonial-meta end -->
 					</div><!-- .testimonial-panel end -->
 				</div>

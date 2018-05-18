@@ -59,11 +59,6 @@ Route::group(['middleware' => 'auth:api'], function()
   // 'uses' => 'API\PassportController@deathannouncement',
   // 'as' => 'client.deathannouncement'
   // ]);
-  //client public announcement
-  // Route::post('get/public', [
-  // 'uses' => 'API\PassportController@public',
-  // 'as' => 'client.public'
-  // ]);
   //client missing person
   // Route::post('get/missing', [
   // 'uses' => 'API\PassportController@missing',
