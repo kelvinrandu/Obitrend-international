@@ -382,9 +382,26 @@
                                                             <option value="Missingperson">Missing persons</option>
                                                             <option value="PublicNotice">Public notice</option>
                                                             <option value="Anniversaries">Anniversaries</option>
+                                                            <option value="red">Anniversaries</option>
 
                                                         </select>
+                                                        <div class="Deathannouncement box">
+
+                                                                                                          <div class="form-group">
+                                                                                                              <label class="control-label col-md-3">Phone Number
+                                                                                                                  <span class="required"> * </span>
+                                                                                                              </label>
+                                                                                                              <div class="col-md-4">
+                                                                                                                  <input type="text" class="form-control" name="paybill" />
+                                                                                                                  <span class="help-block"> Provide your phone number </span>
+                                                                                                              </div>
+                                                                                                          </div>
+                                                        </div>
                                                     </div>
+
+                                                      <div class="Missingperson box">You have selected <strong>missing option</strong> so i am here</div>
+                                                      <div class="PublicNotice box">You have selected <strong>public option</strong> so i am here</div>
+                                                      <div class="Anniversaries box">You have selected <strong>public option</strong> so i am here</div>
                                                 </div>
 
 
@@ -541,7 +558,7 @@
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="card_name"> </p>
                                                     </div>
-                                                    
+
                                                 </div>
                                                 <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">Card Number:</label>

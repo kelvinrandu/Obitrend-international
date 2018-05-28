@@ -49,6 +49,41 @@
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> </head>
 
+        <!-- hide element on dropdown select -->
+                <!-- start here -->
+        <style type="text/css">
+    .box{
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+         width: 100%;
+    }
+    .death{ background: #ff0000; }
+    .missing{ background: #228B22; }
+    .public{ background: #0000ff; }
+    .Deathannouncement{  width: 100%; }
+    .Missingperson{ background: #0000ff; }
+    .PublicNotice{ background: #0000ff; }
+    .Anniversaries{ background: #0000ff; }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+      <!-- end here -->
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
   <div id="fb-root"></div>

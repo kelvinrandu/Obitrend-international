@@ -38,7 +38,7 @@
 
                             <div class="profile-usertitle">
                                 <div class="profile-usertitle-name"> {{$requests[0]->user->first_name}} {{$requests[0]->user->other_names}}</div>
-                                <div class="profile-usertitle-job">  </div>
+                                <div class="profile-usertitle-job">  {{$requests[0]->phone }} </div>
                             </div>
                             <!-- END SIDEBAR USER TITLE -->
                             <!-- SIDEBAR BUTTONS -->
@@ -164,7 +164,12 @@
                                                         </div>
 
                                                     </div>
+                                                      <!-- ANNOUNCEMENT BANNER -->
+                                                    <div class="blog-single-img">
 
+
+                                                        <img width="70%" src="{{Storage::url($requests[0]->image_thumb)}}" /></div>
+                                                             <!-- END HERE -->
                                                 </div>
                                             </div>
                                             <!-- END TERMS OF USE TAB -->
