@@ -16,13 +16,15 @@ $consumer_secret = 'ynme8DzmL1OyxQKCuGHo9m7cx54=';// Use the secret from your te
                    //account on demo.pesapal.com. When you are ready to go live make sure you
                    //change the secret to the live account registered on www.pesapal.com!
 $signature_method = new OAuthSignatureMethod_HMAC_SHA1();
-$iframelink = 'http://demo.pesapal.com/api/PostPesapalDirectOrderV4';
+$iframelink = 'http://www.pesapal.com/api/PostPesapalDirectOrderV4';
   //change to
                    //https://www.pesapal.com/API/PostPesapalDirectOrderV4 when you are ready to go live!
 
 //get form details
+// $currency_code = $_POST['currency_code'];
 $amount = $_POST['amount'];
 $amount = number_format($amount, 2);//format amount to 2 decimal places
+
 
 $desc = $_POST['description'];
 $type = $_POST['type']; //default value = MERCHANT

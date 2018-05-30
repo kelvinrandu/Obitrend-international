@@ -382,26 +382,23 @@
                                                             <option value="Missingperson">Missing persons</option>
                                                             <option value="PublicNotice">Public notice</option>
                                                             <option value="Anniversaries">Anniversaries</option>
-                                                            <option value="red">Anniversaries</option>
+
 
                                                         </select>
                                                         <div class="Deathannouncement box">
 
                                                                                                           <div class="form-group">
-                                                                                                              <label class="control-label col-md-3">Phone Number
+                                                                                                              <label class="control-label col-md-4">
                                                                                                                   <span class="required"> * </span>
                                                                                                               </label>
                                                                                                               <div class="col-md-4">
                                                                                                                   <input type="text" class="form-control" name="paybill" />
-                                                                                                                  <span class="help-block"> Provide your phone number </span>
+                                                                                                                  <span class="help-block"> Provide paybill </span>
                                                                                                               </div>
                                                                                                           </div>
                                                         </div>
                                                     </div>
 
-                                                      <div class="Missingperson box">You have selected <strong>missing option</strong> so i am here</div>
-                                                      <div class="PublicNotice box">You have selected <strong>public option</strong> so i am here</div>
-                                                      <div class="Anniversaries box">You have selected <strong>public option</strong> so i am here</div>
                                                 </div>
 
 
@@ -455,7 +452,7 @@
 
 
                                                 <div class="form-group">
-                                                    <label class="control-label col-md-3">Paybill( for death announcements )
+                                                    <label class="control-label col-md-3">Payment token
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
@@ -482,7 +479,7 @@
                                                           <input type="file" name="image_path" >
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
                                                     <label class="control-label col-md-3">Downloadables
                                                         <span class="required"> * </span>
                                                     </label>
@@ -490,6 +487,11 @@
                                                           <label for="exampleInputFile1">File input</label>
                                                           <input type="file" name="file" >
                                                     </div>
+                                                    @if ($errors->has('file'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('file') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
 
 

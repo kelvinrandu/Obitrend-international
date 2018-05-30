@@ -1,6 +1,11 @@
 <form action="pesapal-iframe.php" method="post">
 	<table>
 		<tr>
+			<td>Currency</td>
+			<td><input type="text" name="currency_code" value="TZS" />
+			</td>
+		</tr>
+		<tr>
 			<td>Amount:</td>
 			<td><input type="text" name="amount" value="5000" />
 			(in Kshs)

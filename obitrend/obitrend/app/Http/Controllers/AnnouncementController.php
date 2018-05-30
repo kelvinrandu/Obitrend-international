@@ -60,15 +60,13 @@ class AnnouncementController extends Controller
   {
 
         $user_id = Auth::user()->id;
-        $allowedFileTypes= config('app.maxFileSize');
-        $maxFileSize= config('app.maxFileSize');
 
     //checks for file upload(id picture)
     $this->validate($request,[
    'description' => 'max:1500',
    'image_path' => 'required|image',
-    // 'file_path' => 'required|mimes:pdf',
-    'file_path'=> 'required|mimes:'.$allowedFileTypes |'max:'.$maxFileSize,
+   // 'file_path' => 'required|mimes:pdf',
+
 ]);
       if ($request->hasFile('image_path')&&$request->hasFile('image_thumb')&&$request->hasFile('file'))
       {
