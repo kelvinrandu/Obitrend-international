@@ -4,11 +4,11 @@ $consumer_key='OQAWkvQn2x+oebu2Z+XDGRiAMJGl7qgv';//Register a merchant account o
                    //demo.pesapal.com and use the merchant key for testing.
                    //When you are ready to go live make sure you change the key to the live account
                    //registered on www.pesapal.com!
-$consumer_secret='nme8DzmL1OyxQKCuGHo9m7cx54=';// Use the secret from your test
+$consumer_secret='ynme8DzmL1OyxQKCuGHo9m7cx54=';// Use the secret from your test
                    //account on demo.pesapal.com. When you are ready to go live make sure you
                    //change the secret to the live account registered on www.pesapal.com!
-$statusrequestAPI = 'http://demo.pesapal.com/api/querypaymentstatus';//change to
-                   //https://www.pesapal.com/api/querypaymentstatus' when you are ready to go live!
+$statusrequestAPI = 'https://www.pesapal.com/api/querypaymentstatus';//change to
+                   //' when you are ready to go live!
 
 // Parameters sent to you by PesaPal IPN
 $pesapalNotification=$_GET['pesapal_notification_type'];

@@ -7,7 +7,7 @@
 		</tr>
 		<tr>
 			<td>Amount:</td>
-			<td><input type="text" name="amount" value="5000" />
+			<td><input type="text" name="amount" value="20" />
 			(in Kshs)
 			</td>
 		</tr>
