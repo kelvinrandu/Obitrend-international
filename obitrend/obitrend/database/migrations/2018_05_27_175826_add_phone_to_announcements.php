@@ -14,7 +14,7 @@ class AddPhoneToAnnouncements extends Migration
     public function up()
     {
       Schema::table('announcements', function($table) {
-  $table->string('phone')->nullable();;
+  $table->string('phone')->nullable();
 });
     }
 

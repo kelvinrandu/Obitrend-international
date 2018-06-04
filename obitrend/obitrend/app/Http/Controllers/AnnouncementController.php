@@ -85,11 +85,12 @@ class AnnouncementController extends Controller
                'type_of_announcement'=>Input::get('fullname'),
                'image_thumb'=>$file,
                'image_path'=>$path,
+                'phone'=>Input::get('phone'),
                'description'=>Input::get('description'),
                'country'=>Input::get('country'),
                'file_path'=>$download,
                'location'=>Input::get('location'),
-               'payment'=>Input::get('card_name'),
+               'payment'=>Input::get('paybill'),
                 'days'=>Input::get('days'),
                'is_featured'=>0,
                'status'=>0,
@@ -117,11 +118,12 @@ class AnnouncementController extends Controller
                  'type_of_announcement'=>Input::get('fullname'),
                  'image_thumb'=>$file,
                  'image_path'=>$path,
+                  'phone'=>Input::get('phone'),
                  'description'=>Input::get('description'),
                  'country'=>Input::get('country'),
                  // 'file_path'=>$download,
                  'location'=>Input::get('location'),
-                 'payment'=>Input::get('card_name'),
+                 'payment'=>Input::get('paybill'),
                   'days'=>Input::get('days'),
                  'is_featured'=>0,
                  'status'=>0,
@@ -142,6 +144,7 @@ class AnnouncementController extends Controller
       }
 
         return redirect()->route('client.index')->with('message','request received successfully');
+  return $request->all();
   }
 
 //creates tributes

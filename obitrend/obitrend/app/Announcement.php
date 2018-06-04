@@ -20,6 +20,7 @@ class Announcement extends Model
         'image_path',
         'description',
         'location',
+        'phone',
         'file_path',
         'payment',
         'status',
