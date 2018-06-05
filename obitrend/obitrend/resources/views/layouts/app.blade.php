@@ -76,6 +76,7 @@ $(document).ready(function(){
             if(optionValue){
                 $(".box").not("." + optionValue).hide();
                 $("." + optionValue).show();
+
             } else{
                 $(".box").hide();
             }
@@ -84,6 +85,95 @@ $(document).ready(function(){
 });
 </script>
       <!-- end here -->
+
+        <!-- Payment view -->
+         <!-- start here -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <script>
+         var textbox = document.getElementById('fiil');
+         var fileselect = document.getElementById('uploadData');
+
+//       pesapal controller function
+         function fileSelect()
+         {
+             var x =  document.getElementById('uploadData').value;
+             var y =  document.getElementById('type').value;
+             var z =  0;
+             if ( y == 'Deathannouncement') {
+               var fileName = x*7 ;
+               // var fileName = x.match(/[^\/\\]+$/);
+
+               document.getElementById('fiil').value = fileName;
+
+             }
+             else if ( y == 'Missingperson') {
+               var fileName = x*3 ;
+               // var fileName = x.match(/[^\/\\]+$/);
+
+               document.getElementById('fiil').value = fileName;
+
+             }else if ( y == 'PublicNotice') {
+               var fileName = x*13 ;
+               // var fileName = x.match(/[^\/\\]+$/);
+
+               document.getElementById('fiil').value = fileName;
+
+             }else if ( y == 'Missingchild') {
+               var fileName = x*2 ;
+               // var fileName = x.match(/[^\/\\]+$/);
+
+               document.getElementById('fiil').value = fileName;
+
+             }else {
+
+                var fileName = y*13;
+              document.getElementById('fiil').value = fileName;
+             }
+              //
+              // if(y=='Deathannouncement'){
+              //   var fileName = x*1 ;
+              //   // var fileName = x.match(/[^\/\\]+$/);
+              //
+              //   document.getElementById('fiil').value = fileName;
+              //
+              // }else if (y=='Missingperson')) {
+              //   var fileName = x*2 ;
+              //   // var fileName = x.match(/[^\/\\]+$/);
+              //
+              //   document.getElementById('fiil').value = fileName;
+              //
+              // }else if (y=='PublicNotice')) {
+              //   var fileName = x*3 ;
+              //   // var fileName = x.match(/[^\/\\]+$/);
+              //
+              //   document.getElementById('fiil').value = fileName;
+              //
+              // }else {
+              //   var fileName = x*4 ;
+              //   // var fileName = x.match(/[^\/\\]+$/);
+              //
+              //   document.getElementById('fiil').value = fileName;
+              //
+              // }
+
+
+
+         }
+         $(document).ready(function(){
+             $("select").change(function(){
+                 $(this).find("option:selected").each(function(){
+                     var optionValue = $(this).attr("value");
+                     if(optionValue){
+                         $(".box").not("." + optionValue).hide();
+                         $("." + optionValue).show();
+                     } else{
+                         $(".box").hide();
+                     }
+                 });
+             }).change();
+         });
+         </script>
+         <!-- end here -->
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
   <div id="fb-root"></div>
@@ -327,7 +417,7 @@ $(document).ready(function(){
                         <li class="nav-item  ">
                             <a href="{{ url('/view/announcements')}}" class="nav-link nav-toggle">
                                 <i class="fa fa-eye"></i>
-                                <span class="title">View announcementss</span>
+                                <span class="title">View announcements</span>
                                 <span class="arrow"></span>
                             </a>
 

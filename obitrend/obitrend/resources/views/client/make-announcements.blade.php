@@ -24,6 +24,7 @@
                     </li>
                     <li>
                         <span>Make request</span>
+
                     </li>
                 </ul>
                 <div class="page-toolbar">
@@ -56,6 +57,9 @@
             <!-- END PAGE HEADER-->
             <div class="row">
                 <div class="col-md-12">
+
+<b style=" padding:.3em; font-size:15px;color:white"> </b>
+<input style="border:1px solid" type="text" onfocus="true"  name="fiil" id="fiil" value=""size="30" />
 
                     <div class="portlet light " id="form_wizard_1">
                         <div class="portlet-title">
@@ -376,10 +380,11 @@
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Announcement Type</label>
                                                     <div class="col-md-4">
-                                                        <select name="fullname" id="country_list" class="form-control">
+                                                        <select name="fullname" id="type" class="form-control">
                                                             <option value=""></option>
                                                             <option value="Deathannouncement">Death announcement</option>
                                                             <option value="Missingperson">Missing persons</option>
+                                                            <option value="Missingchild">Missing child</option>
                                                             <option value="PublicNotice">Public notice</option>
                                                             <option value="Anniversaries">Anniversaries</option>
 
@@ -461,15 +466,17 @@
                                                     </div>
                                                 </div>
 
+
                                                  <div class="form-group">
                                                     <label class="control-label col-md-3">Number of days
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
 
-                                                          <input type="number" min="1" name="days" >
+                                                          <input type="number" min="1" name="days" id="uploadData" onChange="fileSelect();" / >
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">image of your id
                                                         <span class="required"> * </span>
@@ -585,6 +592,12 @@
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="payment[]"> </p>
                                                     </div>-->
+                                                    <!-- <div class="pesapal">
+                                                    <p>If you click on the "Hide" button, I will disappear.</p>
+                                                      </div>
+
+                                  <button id="hide">Hide</button>
+                                  <button id="show">Show</button> -->
 
                                                 </div>
                                             </div>
