@@ -61,7 +61,7 @@ class HomeController extends Controller
           $requests = Notification::all();
           //  $file = Storage::disk('public')->get($filename);
 
-             return view('client.view-announcements',
+             return view('client.view',
              array('all' => $all ),
 
              array('requests' =>$requests)

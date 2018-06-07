@@ -51,7 +51,7 @@
 
         <!-- hide element on dropdown select -->
                 <!-- start here -->
-        <style type="text/css">
+        <!-- <style type="text/css">
     .box{
         color: #fff;
         padding: 20px;
@@ -66,31 +66,15 @@
     .Missingperson{ background: #0000ff; }
     .PublicNotice{ background: #0000ff; }
     .Anniversaries{ background: #0000ff; }
-</style>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            var optionValue = $(this).attr("value");
-            if(optionValue){
-                $(".box").not("." + optionValue).hide();
-                $("." + optionValue).show();
+</style> -->
 
-            } else{
-                $(".box").hide();
-            }
-        });
-    }).change();
-});
-</script>
       <!-- end here -->
 
         <!-- Payment view -->
          <!-- start here -->
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
          <script>
-         var textbox = document.getElementById('fiil');
+         var textbox = document.getElementById('amount');
          var fileselect = document.getElementById('uploadData');
 
 //       pesapal controller function
@@ -101,33 +85,43 @@ $(document).ready(function(){
              var z =  0;
              if ( y == 'Deathannouncement') {
                var fileName = x*7 ;
+               var desc = "Death Announcement" ;
                // var fileName = x.match(/[^\/\\]+$/);
 
-               document.getElementById('fiil').value = fileName;
+               document.getElementById('amount').value = fileName;
+               document.getElementById('description').value = desc;
 
              }
              else if ( y == 'Missingperson') {
                var fileName = x*3 ;
+               var desc = "Missing people" ;
                // var fileName = x.match(/[^\/\\]+$/);
 
-               document.getElementById('fiil').value = fileName;
+               document.getElementById('amount').value = fileName;
+               document.getElementById('description').value = desc;
 
              }else if ( y == 'PublicNotice') {
                var fileName = x*13 ;
+               var desc = "Public Notice " ;
                // var fileName = x.match(/[^\/\\]+$/);
 
-               document.getElementById('fiil').value = fileName;
+               document.getElementById('amount').value = fileName;
+               document.getElementById('description').value = desc;
 
              }else if ( y == 'Missingchild') {
                var fileName = x*2 ;
+               var desc = "MissingChild Announcement" ;
                // var fileName = x.match(/[^\/\\]+$/);
 
-               document.getElementById('fiil').value = fileName;
+               document.getElementById('amount').value = fileName;
+               document.getElementById('description').value = desc;
 
              }else {
 
                 var fileName = y*13;
-              document.getElementById('fiil').value = fileName;
+                var desc = "Anniversary Announcement" ;
+              document.getElementById('amount').value = fileName;
+              document.getElementById('description').value = desc;
              }
               //
               // if(y=='Deathannouncement'){
@@ -159,19 +153,8 @@ $(document).ready(function(){
 
 
          }
-         $(document).ready(function(){
-             $("select").change(function(){
-                 $(this).find("option:selected").each(function(){
-                     var optionValue = $(this).attr("value");
-                     if(optionValue){
-                         $(".box").not("." + optionValue).hide();
-                         $("." + optionValue).show();
-                     } else{
-                         $(".box").hide();
-                     }
-                 });
-             }).change();
-         });
+
+
          </script>
          <!-- end here -->
 </head>
@@ -491,6 +474,23 @@ function fb_share(dynamic_link,dynamic_title) {
 
             <!-- BEGIN CORE PLUGINS -->
             <script src="{{asset('layout_assets/global/plugins/jquery.min.js')}}" type="text/javascript"></script>
+
+            <script type="text/javascript">
+            $(document).ready(function(){
+                $("select").change(function(){
+                    $(this).find("option:selected").each(function(){
+                        var optionValue = $(this).attr("value");
+                        if(optionValue){
+                            $(".box").not("." + optionValue).hide();
+                            $("." + optionValue).show();
+
+                        } else{
+                            $(".box").hide();
+                        }
+                    });
+                }).change();
+            });
+            </script>
             <script src="{{asset('layout_assets/global/plugins/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
             <script src="{{asset('layout_assets/global/plugins/js.cookie.min.js')}}" type="text/javascript"></script>
             <script src="{{asset('layout_assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>

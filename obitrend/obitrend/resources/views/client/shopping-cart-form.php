@@ -2,12 +2,12 @@
 	<table>
 		<tr>
 			<td>Currency</td>
-			<td><input type="text" name="currency_code" value="TZS" />
+			<td><input type="text" name="currency_code" value="USD" />
 			</td>
 		</tr>
 		<tr>
 			<td>Amount:</td>
-			<td><input type="text" name="amount" value="20" />
+			<td><input type="text" name="amount"   value="20" />
 			(in Kshs)
 			</td>
 		</tr>

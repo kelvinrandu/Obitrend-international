@@ -103,7 +103,7 @@
 	<!-- Slide #1 -->
 	<div class="slide--item bg-overlay bg-overlay-dark">
 		<div class="bg-section">
-			<img src="{{asset('assets/images/sliders/slide-bg/6.jpg')}}" alt="background">
+			<img src="{{asset('assets/images/sliders/slide-bg/223.jpg')}}" alt="background">
 		</div>
 		<div class="pos-vertical-center">
 			<div class="container">
@@ -126,7 +126,7 @@
 	<!-- Slide #2 -->
 	<div class="slide--item bg-overlay bg-overlay-dark">
 		<div class="bg-section">
-			<img src="{{asset('assets/images/sliders/slide-bg/3.jpg')}}" alt="background">
+			<img src="{{asset('assets/images/sliders/slide-bg/224.jpg')}}" alt="background">
 		</div>
 		<div class="pos-vertical-center">
 			<div class="container">
@@ -150,7 +150,7 @@
 	<!-- Slide #3 -->
 	<div class="slide--item bg-overlay bg-overlay-dark">
 		<div class="bg-section">
-			<img src="{{asset('assets/images/sliders/slide-bg/3.jpg')}}" alt="background">
+			<img src="{{asset('assets/images/sliders/slide-bg/227.jpg')}}" alt="background">
 		</div>
 		<div class="pos-vertical-center">
 			<div class="container">
@@ -402,7 +402,7 @@
 ============================================= -->
 <section id="testimonial3" class="testimonial testimonial-2 testimonial-3 bg-overlay bg-overlay-dark bg-parallex">
 		<div class="bg-section">
-			<img src="assets/images/background/bg-7.jpg" alt="Background"/>
+			<img src="{{asset('assets/images/sliders/slide-bg/221.jpg')}}" alt="Background"/>
 		</div>
 	<div class="container">
 		<div class="row clearfix">
@@ -440,7 +440,7 @@
 					<!-- Testimonial # -->
 					<div class="testimonial-panel">
 						<div class="testimonial--meta-img">
-							<img src="assets/images/testimonial/2.png" alt="Testimonial Author">
+							<img src="assets/images/testimonial/1.png" alt="Testimonial Author">
 						</div>
 						<div class="testimonial--body">
 							<p>My project was a simple task, but the persistence & determination of the team turned it into a great project which make me happy!</p>
@@ -472,15 +472,15 @@
 					<!-- Testimonial #1 -->
 					<div class="testimonial-panel">
 						<div class="testimonial--meta-img">
-								<img src="assets/images/testimonial/4.png" alt="Testimonial Author">
+								<img src="assets/images/testimonial/1.png" alt="Testimonial Author">
 							</div>
 						<div class="testimonial--body">
-							<p>In my job as social media strategist, I've tried every analytics product on the market and when I came across whole, I was blown away!</p>
+							<p>Its great how technology has revolutionalized marketing with regards to obitrend</p>
 						</div><!-- .testimonial-body end -->
 						<div class="testimonial--icon"></div><!-- .testimonial-icon end -->
 						<div class="testimonial--meta">
-							<h4>Edwin Ochieng</h4>
-							<p>C4d lab</p>
+							<h4>Edwin Nyaluogo</h4>
+							<p>C4dlab</p>
 						</div><!-- .testimonial-meta end -->
 					</div><!-- .testimonial-panel end -->
 				</div>
@@ -633,9 +633,9 @@
 						</form>
 						<div class="clearfix"></div>
 						<div class="social">
-							<a class="share-facebook" href="#"><i class="fa fa-facebook"></i></a>
-							<a class="share-twitter" href="#"><i class="fa fa-twitter"></i></a>
-							<a class="share-instagram" href="#"><i class="fa fa-instagram"></i></a>
+							<a class="share-facebook" href="https://www.linkedin.com/in/obitrend-international-200144164/"><i class="fa fa-facebook"></i></a>
+							<a class="share-twitter" href="https://twitter.com/ObitrendI"><i class="fa fa-twitter"></i></a>
+							<a class="share-instagram" href="https://www.instagram.com/obitrendinternational/"><i class="fa fa-instagram"></i></a>
 							<a class="share-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
 						</div>
 					</div>

@@ -424,11 +424,21 @@
 
                             <div class="blog-single-desc">
                                 <p>{{ $request[0]->description }}</p>
+                                @if(($request[0]->type_of_announcement)=="Deathannouncement")
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion3" href="#accordion3_1"> Paybill: {{$request[0]->payment}} </a>
+                                        </h4>
+                                    </div>
+
+                                </div>
+                                 @endif
 
 
                             </div>
                             <div class="blog-single-foot pull-right">
-                                <!-- <h3 class="blog-single-head-title pull-right">{{ $request[0]->title }}</h3> -->
+
                                 <ul class="blog-post-tags">
                                     <li class="uppercase">
                                         <a href="javascript:;">{{ $request[0]->location }}</a>

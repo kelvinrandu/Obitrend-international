@@ -57,9 +57,9 @@
             <!-- END PAGE HEADER-->
             <div class="row">
                 <div class="col-md-12">
-
+<!--
 <b style=" padding:.3em; font-size:15px;color:white"> </b>
-<input style="border:1px solid" type="text" onfocus="true"  name="fiil" id="fiil" value=""size="30" />
+<input style="border:1px solid" type="text" onfocus="true"  name="fiil" id="fiil" value=""size="30" /> -->
 
                     <div class="portlet light " id="form_wizard_1">
                         <div class="portlet-title">
@@ -598,11 +598,33 @@
 
                                   <button id="hide">Hide</button>
                                   <button id="show">Show</button> -->
+                                  <!-- start here -->
+
+                                    <input type="text" name="currency_code" value="USD" />
+
+                                  <input type="text" name="amount"  value="" />
+
+                                      <input type="text" name="type" value="MERCHANT" readonly="readonly" />
+                                      <input type="text" name="description" value="" />
+
+
+                                      <input type="text" name="reference" value="001" />
+
+                                      <input type="text" name="first_name" value="John" />
+
+                                      <input type="text" name="last_name" value="Doe" />
+
+                                      <input type="text" name="email" value="john@yahoo.com" />
+
+
+
+                                  <!-- end here -->
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">

@@ -59,93 +59,108 @@ class AnnouncementController extends Controller
   public function create(request $request)
   {
 
-        $user_id = Auth::user()->id;
+//         $user_id = Auth::user()->id;
+//
+//     //checks for file upload(id picture)
+//     $this->validate($request,[
+//    'description' => 'max:1500',
+//    'image_path' => 'required|image',
+//    // 'file_path' => 'required|mimes:pdf',
+//
+// ]);
+//       if ($request->hasFile('image_path')&&$request->hasFile('image_thumb')&&$request->hasFile('file'))
+//       {
+//
+//            $path = $request->image_path->store('public/id');
+//            $file = $request->image_thumb->store('public/upload');
+//            $download = $request->file->store('public/downloads');
+//
+//
+//       //creates announcements
+//
+//
+//            Announcement::create(array(
+//                'content'=>Input::get('content'),
+//                'user_id'=>Auth::user()->id,
+//                'type_of_announcement'=>Input::get('fullname'),
+//                'image_thumb'=>$file,
+//                'image_path'=>$path,
+//                 'phone'=>Input::get('phone'),
+//                'description'=>Input::get('description'),
+//                'country'=>Input::get('country'),
+//                'file_path'=>$download,
+//                'location'=>Input::get('location'),
+//                'payment'=>Input::get('paybill'),
+//                 'days'=>Input::get('days'),
+//                'is_featured'=>0,
+//                'status'=>0,
+//                'title'=>Input::get('address')
+//
+//              ));
+//              //if successful redirect to dashboard
+//
+//                $user = User::find($user_id);
+//                $user->notify(new requestReceived() );
+//          return redirect()->route('client.index')->with('message','request received successfully');
+//
+//       }elseif($request->hasFile('image_path')&&$request->hasFile('image_thumb')) {
+//
+//
+//              $path = $request->image_path->store('public/id');
+//               $file = $request->image_thumb->store('public/upload');
+//
+//
+//         //creates announcements
+//
+//              Announcement::create(array(
+//                  'content'=>Input::get('content'),
+//                  'user_id'=>Auth::user()->id,
+//                  'type_of_announcement'=>Input::get('fullname'),
+//                  'image_thumb'=>$file,
+//                  'image_path'=>$path,
+//                   'phone'=>Input::get('phone'),
+//                  'description'=>Input::get('description'),
+//                  'country'=>Input::get('country'),
+//                  // 'file_path'=>$download,
+//                  'location'=>Input::get('location'),
+//                  'payment'=>Input::get('paybill'),
+//                   'days'=>Input::get('days'),
+//                  'is_featured'=>0,
+//                  'status'=>0,
+//                  'title'=>Input::get('address')
+//
+//                ));
+//                //if successful redirect to dashboard
+//
+//                   $user = User::find($user_id);
+//                   $user->notify(new requestReceived() );
+//
+//          return redirect()->route('client.index')->with('message','request received successfully');
+//       }
+//       else{
+//
+//           return redirect()->back()->with('message','please upload a picture of your id');
+//
+//       }
+//
+//         return redirect()->route('client.index')->with('message','request received successfully');
+// $currency_code = "USD";
+// $amount = 20 ;
+ $type = "MERCHANT";
+// $description = "Order Description";
+// $_REQUEST["reference"] = "001";
+// $last_name = "john";
+// $first_name = "Doe";
+// $email = "john@yahoo.com";
+// $input = ['currency_code' => $currency_code, 'amount' => $amount,
+//  'type' => $type , 'description' =>  $description ,
+//  'first_name' => $first_name,'last_name' => $last_name,'email' => $email];
 
-    //checks for file upload(id picture)
-    $this->validate($request,[
-   'description' => 'max:1500',
-   'image_path' => 'required|image',
-   // 'file_path' => 'required|mimes:pdf',
-
-]);
-      if ($request->hasFile('image_path')&&$request->hasFile('image_thumb')&&$request->hasFile('file'))
-      {
-
-           $path = $request->image_path->store('public/id');
-           $file = $request->image_thumb->store('public/upload');
-           $download = $request->file->store('public/downloads');
+  return redirect('/shopping')->with('type',$type);
 
 
-      //creates announcements
 
-
-           Announcement::create(array(
-               'content'=>Input::get('content'),
-               'user_id'=>Auth::user()->id,
-               'type_of_announcement'=>Input::get('fullname'),
-               'image_thumb'=>$file,
-               'image_path'=>$path,
-                'phone'=>Input::get('phone'),
-               'description'=>Input::get('description'),
-               'country'=>Input::get('country'),
-               'file_path'=>$download,
-               'location'=>Input::get('location'),
-               'payment'=>Input::get('paybill'),
-                'days'=>Input::get('days'),
-               'is_featured'=>0,
-               'status'=>0,
-               'title'=>Input::get('address')
-
-             ));
-             //if successful redirect to dashboard
-
-               $user = User::find($user_id);
-               $user->notify(new requestReceived() );
-         return redirect()->route('client.index')->with('message','request received successfully');
-
-      }elseif($request->hasFile('image_path')&&$request->hasFile('image_thumb')) {
-
-
-             $path = $request->image_path->store('public/id');
-              $file = $request->image_thumb->store('public/upload');
-
-
-        //creates announcements
-
-             Announcement::create(array(
-                 'content'=>Input::get('content'),
-                 'user_id'=>Auth::user()->id,
-                 'type_of_announcement'=>Input::get('fullname'),
-                 'image_thumb'=>$file,
-                 'image_path'=>$path,
-                  'phone'=>Input::get('phone'),
-                 'description'=>Input::get('description'),
-                 'country'=>Input::get('country'),
-                 // 'file_path'=>$download,
-                 'location'=>Input::get('location'),
-                 'payment'=>Input::get('paybill'),
-                  'days'=>Input::get('days'),
-                 'is_featured'=>0,
-                 'status'=>0,
-                 'title'=>Input::get('address')
-
-               ));
-               //if successful redirect to dashboard
-
-                  $user = User::find($user_id);
-                  $user->notify(new requestReceived() );
-
-         return redirect()->route('client.index')->with('message','request received successfully');
-      }
-      else{
-
-          return redirect()->back()->with('message','please upload a picture of your id');
-
-      }
-
-        return redirect()->route('client.index')->with('message','request received successfully');
-  return $request->all();
-  }
+}
 
 //creates tributes
   public function create_comment(request $request )

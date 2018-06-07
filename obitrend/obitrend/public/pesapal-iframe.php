@@ -24,7 +24,7 @@ $iframelink = 'https://www.pesapal.com/API/PostPesapalDirectOrderV4';
 //get form details
 $amount = $_REQUEST['amount'];
 $amount = number_format($amount, 2);//format amount to 2 decimal places
-$currency_code = "TZS";
+$currency_code = "USD";
 
 $desc = $_REQUEST['description'];
 $type = $_REQUEST['type']; //default value = MERCHANT
