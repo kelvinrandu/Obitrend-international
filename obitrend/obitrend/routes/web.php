@@ -14,9 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/shopping', function () {
-    return view('client.shopping-cart-form');
-});
+
+
 //facebook login
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider')->name('facebook.login');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');

@@ -89,7 +89,7 @@
                // var fileName = x.match(/[^\/\\]+$/);
 
                document.getElementById('amount').value = fileName;
-               document.getElementById('description').value = desc;
+               document.getElementById('desc').value = desc;
 
              }
              else if ( y == 'Missingperson') {
@@ -98,7 +98,7 @@
                // var fileName = x.match(/[^\/\\]+$/);
 
                document.getElementById('amount').value = fileName;
-               document.getElementById('description').value = desc;
+               document.getElementById('desc').value = desc;
 
              }else if ( y == 'PublicNotice') {
                var fileName = x*13 ;
@@ -106,7 +106,7 @@
                // var fileName = x.match(/[^\/\\]+$/);
 
                document.getElementById('amount').value = fileName;
-               document.getElementById('description').value = desc;
+               document.getElementById('desc').value = desc;
 
              }else if ( y == 'Missingchild') {
                var fileName = x*2 ;
@@ -114,14 +114,14 @@
                // var fileName = x.match(/[^\/\\]+$/);
 
                document.getElementById('amount').value = fileName;
-               document.getElementById('description').value = desc;
+               document.getElementById('desc').value = desc;
 
              }else {
 
                 var fileName = y*13;
                 var desc = "Anniversary Announcement" ;
               document.getElementById('amount').value = fileName;
-              document.getElementById('description').value = desc;
+              document.getElementById('desc').value = desc;
              }
               //
               // if(y=='Deathannouncement'){

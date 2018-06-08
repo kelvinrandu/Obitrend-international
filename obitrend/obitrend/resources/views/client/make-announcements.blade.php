@@ -600,21 +600,19 @@
                                   <button id="show">Show</button> -->
                                   <!-- start here -->
 
-                                    <input type="text" name="currency_code" value="USD" />
+                                    <input hidden="" name="currency_code" value="USD" />
 
-                                  <input type="text" name="amount"  value="" />
+                                    <input hidden="" name="amount" id="amount"  value="" />
 
-                                      <input type="text" name="type" value="MERCHANT" readonly="readonly" />
-                                      <input type="text" name="description" value="" />
+                                      <input hidden="" name="type" value="MERCHANT" readonly="readonly" />
+                                     <input hidden="" name="desc" id="desc" value="" />
+                                      <input hidden="" name="reference" value="001" />
 
+                                      <input hidden="" name="first_name" value="John" />
 
-                                      <input type="text" name="reference" value="001" />
+                                      <input hidden="" name="last_name" value="Doe" />
 
-                                      <input type="text" name="first_name" value="John" />
-
-                                      <input type="text" name="last_name" value="Doe" />
-
-                                      <input type="text" name="email" value="john@yahoo.com" />
+                                      <input hidden="" name="email" value="john@yahoo.com" />
 
 
 
