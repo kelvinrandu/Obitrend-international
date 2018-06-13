@@ -434,6 +434,7 @@
 
                                 </div>
                                  @endif
+                                 <p> for any enquiries please contact {{ $request[0]->phone }}</p>
 
 
                             </div>

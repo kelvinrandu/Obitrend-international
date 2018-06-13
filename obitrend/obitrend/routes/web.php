@@ -172,6 +172,11 @@ Route::group(['middleware' => 'auth'], function()
     'uses' => 'AnnouncementController@download',
     'as' => 'announcement.download'
     ]);
+    /* on succesful  payment */
+    Route::get('accept/payment/{id}', [
+    'uses' => 'AnnouncementController@acceptPayment',
+    'as' => 'accept.payment'
+    ]);
 
 
     //routes to extract images from storage

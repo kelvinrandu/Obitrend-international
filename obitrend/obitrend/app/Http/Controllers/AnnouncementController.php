@@ -185,9 +185,6 @@ class AnnouncementController extends Controller
         // return redirect()->route('client.index')->with('message','request received successfully');
 
 
-
-
-
 }
 //send data to pesapal
 public function sendRequest($input){
@@ -195,6 +192,14 @@ public function sendRequest($input){
     $response = $input;
 
      return view('client.shopping-cart-form',['requests' => $response ]);
+
+}
+// after successful payment
+public function acceptPayment($id){
+
+
+
+     return 1;
 
 }
 

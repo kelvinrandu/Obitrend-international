@@ -455,7 +455,7 @@
                                             <div class="tab-pane" id="tab3">
                                                 <h3 class="block">Provide your payment token</h3>
 
-
+<!--
                                                 <div class="form-group">
                                                     <label class="control-label col-md-3">Payment token
                                                         <span class="required"> * </span>
@@ -464,7 +464,7 @@
                                                         <input type="text" placeholder="" class="form-control" name="card_name" />
                                                         <span class="help-block"> </span>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
 
                                                  <div class="form-group">
@@ -562,13 +562,13 @@
                                                     </div>
                                                 </div> -->
 
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">Payment Token:</label>
                                                     <div class="col-md-4">
                                                         <p class="form-control-static" data-display="card_name"> </p>
                                                     </div>
 
-                                                </div>
+                                                </div> -->
                                                 <!-- <div class="form-group">
                                                     <label class="control-label col-md-3">Card Number:</label>
                                                     <div class="col-md-4">
