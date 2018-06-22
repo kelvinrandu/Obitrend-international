@@ -160,7 +160,7 @@ class AnnouncementController extends Controller
 
                   $first = Auth::user()->first_name;
                   $second = Auth::user()->other_names;
-                   $email = Auth::user()->email;
+                  $email = Auth::user()->email;
 
                 $currency_code = "USD";
                  // $amount = 20 ;

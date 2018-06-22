@@ -77,12 +77,13 @@
          var textbox = document.getElementById('amount');
          var fileselect = document.getElementById('uploadData');
 
-//       pesapal controller function
+//       pesapal amount calculation  function
          function fileSelect()
          {
              var x =  document.getElementById('uploadData').value;
              var y =  document.getElementById('type').value;
              var z =  0;
+             //for death announcements
              if ( y == 'Deathannouncement') {
                var fileName = x*7 ;
                var desc = "Death Announcement" ;
@@ -92,6 +93,7 @@
                document.getElementById('desc').value = desc;
 
              }
+             //for missing persons
              else if ( y == 'Missingperson') {
                var fileName = x*3 ;
                var desc = "Missing people" ;
@@ -100,7 +102,9 @@
                document.getElementById('amount').value = fileName;
                document.getElementById('desc').value = desc;
 
-             }else if ( y == 'PublicNotice') {
+             }
+             //for public notices
+             else if ( y == 'PublicNotice') {
                var fileName = x*13 ;
                var desc = "Public Notice " ;
                // var fileName = x.match(/[^\/\\]+$/);
@@ -108,7 +112,9 @@
                document.getElementById('amount').value = fileName;
                document.getElementById('desc').value = desc;
 
-             }else if ( y == 'Missingchild') {
+             }
+             //for missing child
+             else if ( y == 'Missingchild') {
                var fileName = x*2 ;
                var desc = "MissingChild Announcement" ;
                // var fileName = x.match(/[^\/\\]+$/);
@@ -116,7 +122,9 @@
                document.getElementById('amount').value = fileName;
                document.getElementById('desc').value = desc;
 
-             }else {
+             }
+             //for anniversaries
+             else {
 
                 var fileName = y*13;
                 var desc = "Anniversary Announcement" ;
